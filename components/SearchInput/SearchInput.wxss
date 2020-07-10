@@ -1,0 +1,25 @@
+.search_input{
+    height: 90rpx;
+    background-color: var(--themeColor);
+    
+    padding: 15rpx;
+    justify-content: center;
+    align-items: center;
+}
+.search_box{
+    height: 64rpx;
+    background-color: #ffffff;
+    border-radius: 32rpx;
+    display: flex;
+    align-items: center;
+}
+.search_input_text{
+   width: 85%;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 30rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 36rpx;
+	letter-spacing: 0rpx;
+    color: #b2b2b2;
+}

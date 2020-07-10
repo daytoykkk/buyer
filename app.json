@@ -1,0 +1,54 @@
+{
+  "pages":[ 
+    "pages/index/index",
+    "pages/category/index",
+    "pages/cart/index",
+    "pages/user/index",
+    "pages/goods_list/index",
+    "pages/order/index",
+    "pages/pay/index",
+    "pages/search/index",
+    "pages/coupons/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#3a4058",
+    "navigationBarTitleText": "呆桃杂货铺",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#6d6d6d",
+    "selectedColor": "#383f57",
+    "backgroundColor": "#ffffff",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath":  "pages/index/index",
+        "text": "首页",
+        "iconPath": "icons/home_ys.png",
+        "selectedIconPath": "icons/home_active_ys.png"
+      },
+      {
+        "pagePath":  "pages/category/index",
+        "text": "分类",
+        "iconPath": "icons/category_ys.png",
+        "selectedIconPath": "icons/category_active_ys.png"
+      },
+      {
+        "pagePath":  "pages/cart/index",
+        "text": "购物车",
+        "iconPath": "icons/cart_ys.png",
+        "selectedIconPath": "icons/cart_active_ys.png"
+      },
+      {
+        "pagePath":  "pages/user/index",
+        "text": "我的",
+        "iconPath": "icons/user_ys.png",
+        "selectedIconPath": "icons/user_active_ys.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

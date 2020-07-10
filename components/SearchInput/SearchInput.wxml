@@ -1,0 +1,7 @@
+<view class="search_input">
+    <view class="search_box" >
+          <icon class="icon-small" style="margin-left:36rpx" type="search" size="23"></icon>
+           <input bindtap = "toSearch" class="weui-input search_input_text" maxlength="15" placeholder="搜索想要的商品" />
+    </view>
+</view>
+  

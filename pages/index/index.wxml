@@ -1,0 +1,8 @@
+<view class="main">
+    <!--搜索框-->
+    <SearchInput></SearchInput>
+    <!--一些Tags-->
+    <view>
+        
+    </view>
+</view>
