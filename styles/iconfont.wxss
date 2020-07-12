@@ -1,0 +1,25 @@
+@font-face {font-family: "iconfont";
+  src: url('//at.alicdn.com/t/font_1937140_hr0zj8go5al.eot?t=1594568755466'); /* IE9 */
+  src: url('//at.alicdn.com/t/font_1937140_hr0zj8go5al.eot?t=1594568755466#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAANUAAsAAAAAB3QAAAMGAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCfgqCZIIxATYCJAMICwYABCAFhG0HOxtwBhHVm0XIfibYthHWWDm/5Y1WQhfNN8Hzr3/975OcuZNJ3vsQXMpavSuzoivdAEiAgLPNzdA1KsLAVpzn/fQd6QTChfDjf46ZLgM0P9CcMooSBzje870BRdQlFdiB3IHcAfENYxe0xMsQwFNAOdKsRbtuOBRzlgAybvTIwbhMAEVZ2iFEFRs1q6wmgTNLzHVgVfDz8pEqOTAkLObCTiOaD6PRm+hN0s6OZ9PPQyCczgawbWCBckBBelQ6OmGjRDkWryaUYtjWKIE3yTh+E3kmZKv/eAISYZamAVAKJg28iRwFlyaEoiv+SwOAAg6YCCycIBucpKU561OK5Jqa9uB190dvez580+P+q9FLD27dtunQgS3MPlxk6eYNh2TOxu5Fevb1VT3Tlm7M0cdvLH3AoRCWbcieP+OyA1u2ZOu1udggNoT0ZRuYsT5YGHpvyL4xR56hm3L23Xa0RIYiySC/Pt+0m3pF7WW1dGojni/AN+uGWsHPq/qlWs09PmOR22Hyy5I+mrW3cgkhlYHs53y1sXlH+T+l570uefrcujy+in+aa3uTDOPelG43NcOcatN7SVZtmrruK6fIUo2FP7MPbpa925J+a1tPzTCofqEuV7VTld00AiA+aD/apn/jd/g4I+u+gRnr/XZBAXhWuXPVwBcfVLq5wJ2sU+Dd99ISAMrFZsIo0FAvgGEi7mZqPB6IQZ4sXg7VZL/DjODIfp+uJPkTsDiKIRVbDhIEqkGEoyF4ymq5PZDVFCyiKaCMBQCETE6BIQPnwZLJDaRiX0CCHD5DRKYseHpI1gMDJVKTasqoBR2YPyRLu7fNosLyO4Zr1ZwWB4w38pnC0DddPn3DHXmKJecnDCIePNMGC7gO15XgYMpopYkix9y2vuqNGktbpTRl1IIOmD9IlnbvdRZV+P47hmvV3NBS5X4jn6l/0Gt0HZA3xd6p5VZec37CQMQDz7SBBdhwtRIEjupxGa004oDYMWtRO99V0Syv2t5uF+CZWpN1oiXzdH0vG3HVu0t1N/VVBQAA') format('woff2'),
+  url('//at.alicdn.com/t/font_1937140_hr0zj8go5al.woff?t=1594568755466') format('woff'),
+  url('//at.alicdn.com/t/font_1937140_hr0zj8go5al.ttf?t=1594568755466') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('//at.alicdn.com/t/font_1937140_hr0zj8go5al.svg?t=1594568755466#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gouwuchelandi-041:before {
+  content: "\e607";
+}
+
+.icon-gouwuchelandi-04:before {
+  content: "\e606";
+}
+

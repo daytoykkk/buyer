@@ -1,8 +1,154 @@
 <view class="main">
-    <!--搜索框-->
+    <!-- 搜索框 -->
     <SearchInput></SearchInput>
-    <!--一些Tags-->
-    <view>
-        
+    <!-- 轮播图 -->
+    <view class="hu">
+        <swiper class="swiper_box" autoplay indicator-dots circular interval="3000">
+            <swiper-item class="swiper_item">
+                <image mode="widthFix" src="../../icons/11.png"></image>
+            </swiper-item>
+            <swiper-item class="swiper_item">
+                <image mode="widthFix" src="../../icons/12.png"></image>
+            </swiper-item>
+            <swiper-item class="swiper_item">
+                <image mode="widthFix" src="../../icons/13.png"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <!-- 分类导航 -->
+    <view class="category_box">
+        <view class="category_item" wx:for="{{cates}}" wx:key="name">
+            <view style="width:100%">
+                <image src="{{item.imgUrl}}"></image>
+            </view>
+            <text>{{item.name}}</text>
+        </view>
+    </view>
+    <!-- 领券中心 -->
+    <view class="quan_box">
+        <view>
+            <text class="quan_title">领券中心</text>
+            <text decode="{{true}}" class="quan_more">更多&nbsp;></text>
+        </view>
+        <scroll-view scroll-x style="width:94%;white-space:nowrap;">
+            <view class="quan_item" wx:for="{{quanList}}" wx:key="index">
+                <image class='background-image' src='../../icons/quan.png' mode="aspectFill"></image>
+                <view class="content">
+                    <view class="quan_content_box">
+                        <text class="quan_name">{{item.name}}\n</text>
+                        <text class="quan_condition">{{item.condition}}</text>
+                    </view>
+                    <view class="quan_price_box">
+                        <text class="quan_price_icon">￥</text>
+                        <text class="quan_price">{{item.discount}}</text>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 本周热门 -->
+    <view class="pop_box">
+        <view>
+            <text class="pop_title">本周热门</text>
+            <text decode="{{true}}" class="quan_more">更多商品&nbsp;></text>
+        </view>
+        <view class="pop_goods">
+            <view class="pop_item">
+                <image src="../../icons/1.png" mode="aspectFill"></image>
+                \n
+                <text class="pop_name">商品名称\n</text>
+                <view>
+                    <text class="pop_price">￥10</text>
+                    <text style="clear:both;float:right;font-size:44rpx;margin-right:10rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+                </view>
+            </view>
+            <view class="pop_item">
+                <image src="../../icons/1.png" mode="aspectFill"></image>
+                \n
+                <text class="pop_name">商品名称\n</text>
+                <view>
+                    <text class="pop_price">￥10</text>
+                    <text style="clear:both;float:right;font-size:44rpx;margin-right:10rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+                </view>
+            </view>
+            <view class="pop_item">
+                <image src="../../icons/1.png" mode="aspectFill"></image>
+                \n
+                <text class="pop_name">商品名称\n</text>
+                <view>
+                    <text class="pop_price">￥10</text>
+                    <text style="clear:both;float:right;font-size:44rpx;margin-right:10rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+                </view>
+            </view>
+            <view class="pop_item">
+                <image src="../../icons/1.png" mode="aspectFill"></image>
+                \n
+                <text class="pop_name">商品名称\n</text>
+                <view>
+                    <text class="pop_price">￥10</text>
+                    <text style="clear:both;float:right;font-size:44rpx;margin-right:10rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 小标签 -->
+    <view class="tags_box">
+        <text class="tags_name tags_name_active">进口食品</text>
+        <text class="tags_name">罐头食品</text>
+        <text class="tags_name">地方特产</text>
+        <text class="tags_name">猜你喜欢</text>
+    </view>
+    <!-- 标签对应商品 -->
+    <view class="goods_box">
+        <view class="goods_item">
+            <view style="width:100%">
+                <image src="../../icons/1.png" mode="widthFix"></image>
+            </view>
+            <text class="goods_name">商品名称\n</text>
+            <view>
+                <text class="goods_price">￥10</text>
+                <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+            </view>
+        </view>
+         <view class="goods_item">
+            <view style="width:100%">
+                <image src="../../icons/1.png" mode="widthFix"></image>
+            </view>
+            <text class="goods_name">商品名称\n</text>
+            <view>
+                <text class="goods_price">￥10</text>
+                <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+            </view>
+        </view>
+         <view class="goods_item">
+            <view style="width:100%">
+                <image src="../../icons/1.png" mode="widthFix"></image>
+            </view>
+            <text class="goods_name">商品名称\n</text>
+            <view>
+                <text class="goods_price">￥10</text>
+                <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+            </view>
+        </view>
+         <view class="goods_item">
+            <view style="width:100%">
+                <image src="../../icons/1.png" mode="widthFix"></image>
+            </view>
+            <text class="goods_name">商品名称\n</text>
+            <view>
+                <text class="goods_price">￥10</text>
+                <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+            </view>
+        </view>
+         <view class="goods_item">
+            <view style="width:100%">
+                <image src="../../icons/1.png" mode="widthFix"></image>
+            </view>
+            <text class="goods_name">商品名称\n</text>
+            <view>
+                <text class="goods_price">￥10</text>
+                <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+            </view>
+        </view>
     </view>
 </view>

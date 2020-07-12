@@ -1,3 +1,295 @@
-view{
-    color: var(--themeColor);
+.main{
+    background: #f8f8f8;
+}
+
+/*轮播图样式*/
+.hu{
+    width: 100%;
+    height: 380rpx;
+    background: #3a4058;
+    border-bottom-right-radius:100rpx;
+    border-bottom-left-radius: 100rpx;
+}
+.swiper_box{
+    width: 718rpx;
+    height: 260rpx;
+    margin-left: 16rpx;
+    border-radius: 30rpx;
+    overflow: hidden;
+    transform: translateY(0);
+}
+.swiper_item image{
+    width: 100%;
+    border-radius: 30rpx;
+}
+
+/*分类导航样式*/
+.category_box{
+    width: 718rpx;
+	height: 350rpx;
+	background-color: #ffffff;
+    border-radius: 24rpx;
+    margin-left: 16rpx;
+    margin-top: -100rpx;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1;
+}
+.category_item {
+    width: 25%; 
+    text-align: center;
+}
+.category_item image{
+    width: 104rpx;
+    height: 104rpx;
+	background-image: linear-gradient(90deg, 
+        );
+}
+.category_item text{
+    width: 100rpx;
+	height: 22rpx;
+	font-family: FZLanTingHei-R-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #000000;
+}
+
+/*领券中心样式*/
+.quan_box{
+    clear: both;
+    width: 718rpx;
+    height: 170rpx;
+    margin-top: 16rpx;
+    margin-left: 16rpx;
+    padding-left: 16rpx;
+    padding-right: 8rpx;
+	background-color: #ffffff;
+	border-radius: 24rpx;
+}
+.quan_title{
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 30rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+	color: #000000;
+}
+.quan_more{
+    float: right;
+    margin-right: 15rpx;
+    font-family: FZLanTingHei-L-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+	color: #8d8eab;
+}
+.quan_item{
+    display: inline-block;
+    width: 340rpx;
+    height: 90rpx;
+    margin-right: 40rpx;
+    position: relative;
+}
+.background-image{
+    height : 100%;
+     width: 100%;
+     position: absolute;
+     left: 0px;
+     top: 0px;
+ }
+.content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    display: flex;
+}
+.quan_content_box{
+    clear:both;
+    width: 240rpx;
+    padding-left: 32rpx;
+}
+.quan_name{
+    width: 200rpx;
+	height: 50rpx;
+	font-family: FZLanTingHei-R-GBK;
+	font-size: 20rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height:50rpx;
+	letter-spacing: 0rpx;
+    color: #000000;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+.quan_condition{
+    width: 190rpx;
+	height: 18rpx;
+	font-family: FZLanTingHei-R-GBK;
+	font-size: 16rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 18rpx;
+	letter-spacing: 0rpx;
+    color: #929090;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+.quan_price_box{
+    clear:both;
+    width: 80rpx;
+    text-align: center;
+}
+.quan_price_icon{
+    width: 38rpx;
+	height: 36rpx;
+	font-family: FZLanTingHei-B-GBK;
+	font-size: 12rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 86rpx;
+	letter-spacing: 0rpx;
+	color: #fb0404;
+}
+.quan_price{
+    font-family: FZLanTingHei-B-GBK;
+	font-size: 38rpx;
+	font-weight: normal;
+    letter-spacing: 0rpx;
+    line-height: 86rpx;
+	color: #fb0404;
+}
+
+/*本周热门样式*/
+.pop_box{
+    width: 750rpx;
+	height: 720rpx;
+    background-color: #ffffff;
+    margin-top: 16rpx;
+    padding-left: 32rpx;
+    padding-right: 30rpx;
+    overflow: hidden;
+}
+.pop_goods{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1;
+}
+.pop_item{
+    width: 33.3%;
+}
+.pop_item image{
+    width: 202rpx;
+    height: 202rpx;
+}
+.pop_name{
+    width: 170rpx;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+    color: #000000;
+    margin-left: 20rpx;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+.pop_price{
+    font-family: FZLanTingHei-B-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+    color: #f7937b;
+    margin-left: 20rpx;
+}
+
+/*小标签*/
+.tags_box{
+    width: 100%;
+    height: 96rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tags_name{
+	font-family: FZLanTingHei-R-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+    color: #000000;
+    margin-right: 24rpx;
+}
+.tags_name_active{
+    color: #a28482;
+}
+/*小标签对应商品*/
+.goods_box{
+    width: 96%;
+    margin-left: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+}
+.goods_item{
+    width: 49%;
+    height: 478rpx;
+    margin-bottom: 18rpx;
+    background-color: #ffffff;
+	border-radius: 24rpx;
+}
+.goods_item image{
+    width: 100%;
+    border-radius: 24rpx;
+}
+.goods_name{
+    width: 230rpx;
+	font-family: FZLanTingHei-L-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+    letter-spacing: 0rpx;
+    color: #000000;
+    margin-left: 32rpx;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+.goods_price{
+    font-family: FZLanTingHei-B-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+    color: #f7937b;
+    margin-left: 32rpx;
 }
