@@ -1,2 +1,35 @@
-<!--pages/user/index.wxml-->
-<text>pages/user/index.wxml</text>
+<view class="main">
+    <!--个人信息-->
+    <view class="person_info">
+        <view class="msg_box">
+            <view class="tx">
+                <image mode="widthFix" src="../../icons/2.png" ></image>
+            </view>
+            <view class="msg">
+                <text class="msg_name">一颗呆桃\n</text>
+                <text class="msg_id">id:123456789</text>
+            </view>
+        </view>
+    </view>
+    <!--优惠券-->
+    <view class="quan_box">
+         <view class="quan">
+            <image src="../../icons/quan_icon.png" style="height:36rpx;width:42rpx; margin-top: 50rpx;" mode="aspectFit"></image>
+            <text class="quan_text">我的优惠券 ></text>    
+        </view>
+    </view>
+    <!--订单导航-->
+    <view class="daohang">
+        <view class="daohang_now .daohang_active"><text style="margin-left:32rpx;">当前订单</text>
+            <view class="daohang_line"></view>
+        </view>
+        <view class="daohang_all"><text style="margin-left:242rpx;">全部订单</text>
+        </view>
+    </view>
+    <!--订单们-->
+    <view class="good_item">
+        <view class="msg_box"></view>
+        <view class="imgs_box"></view>
+        <view class="price_box"></view>
+    </view>
+</view>

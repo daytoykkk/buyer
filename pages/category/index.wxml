@@ -1,2 +1,41 @@
 <!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view class="main">
+    <!--搜索框-->
+    <SearchInput></SearchInput>
+    <!--广告图-->
+    <view class="poor_bk"></view>
+    <view class="gk_img_box">
+        <image src="../../icons/11.png" mode="widthFix"></image>
+    </view>
+    <!--商品分类-->
+    <view class="contanier">
+        <!--左侧导航-->
+        <scroll-view scroll-y class="left" >
+            <view
+             class="tag_item {{index==0?'tag_item_active':''}}"
+             wx:for="{{tags}}"
+             wx:key="*this"
+             >
+                 <view hidden="{{index!=0}}" class="active_border"></view>
+                {{item}}
+            </view>
+              
+        </scroll-view>
+        <!--右侧-->
+        <scroll-view scroll-y class="right">
+            <view class="good_item">
+                <view class="good_img">
+                    <image src="../../icons/1.png" mode="aspectFit"></image>
+                </view>
+                <view class="good_content">
+                    <text class="good_name">商品名称\n</text>
+                    <text class="good_xianzhi">限购2件</text>
+                    <view>
+                <text class="good_price">￥10</text>
+                <text style="clear:both;float:right;font-size:44rpx;margin-right:32rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+            </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

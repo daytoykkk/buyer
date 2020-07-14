@@ -1,2 +1,169 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<view class="main">
+    <!-- 搜索框 -->
+    <view class="search_box">
+        <SearchInput></SearchInput>
+    </view>
+    <!-- 购物车 -->
+    <view class="cart_box">
+        <view class="title">
+            <text class="ziti">自提</text>
+            <text class="count_">共<text style="color: #8d8eab;">4</text>件商品</text>
+        </view>
+        <!-- 商品 -->
+        <view class="cart_item">
+            <checkbox checked="false" style="margin-left:32rpx;"></checkbox>
+            <view class="good_box">
+                <image src="../../icons/1.png" mode="widthFix"></image>
+                <view class="good_content">
+                    <text class="good_name">商品名称</text>
+                    <view class="good_price_box">
+                        <text class="good_price">￥10</text>
+                        <view class="plus_minis">
+                            <view class="minus">
+                                <text>-</text>
+                            </view>
+                            <text class="number" style="padding-left:6rpx;padding-right:6rpx;">
+                                1
+                            </text>
+                            <view class="minus">
+                                <text>+</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="cart_item">
+            <checkbox checked="false" style="margin-left:32rpx;"></checkbox>
+            <view class="good_box">
+                <image src="../../icons/1.png" mode="widthFix"></image>
+                <view class="good_content">
+                    <text class="good_name">商品名称</text>
+                    <view class="good_price_box">
+                        <text class="good_price">￥10</text>
+                        <view class="plus_minis">
+                            <view class="minus">
+                                <text>-</text>
+                            </view>
+                            <text class="number" style="padding-left:6rpx;padding-right:6rpx;">
+                                1
+                            </text>
+                            <view class="minus">
+                                <text>+</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="cart_item">
+            <checkbox checked="false" style="margin-left:32rpx;"></checkbox>
+            <view class="good_box">
+                <image src="../../icons/1.png" mode="widthFix"></image>
+                <view class="good_content">
+                    <text class="good_name">商品名称</text>
+                    <view class="good_price_box">
+                        <text class="good_price">￥10</text>
+                        <view class="plus_minis">
+                            <view class="minus">
+                                <text>-</text>
+                            </view>
+                            <text class="number" style="padding-left:6rpx;padding-right:6rpx;">
+                                1
+                            </text>
+                            <view class="minus">
+                                <text>+</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--优惠券-->
+    <view class="discount">
+        <text class="dis_name">优惠券</text>
+        <text class="dis_price">已减10元</text>
+        <text class="dis_quan" space="ensp">已选一张 ></text>
+    </view>
+    <!--猜你喜欢-->
+    <view class="guess">
+        <view class="guess_line"></view>
+        <view class="guess_word">猜你喜欢</view>
+    </view>
+    <!--猜你喜欢商品-->
+     <view class="goods_box">
+        <view class="goods_item">
+            <view style="width:100%">
+                <image src="../../icons/1.png" mode="widthFix"></image>
+            </view>
+            <text class="goods_name">商品名称\n</text>
+            <view>
+                <text class="goods_price">￥10</text>
+                <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+            </view>
+        </view>
+         <view class="goods_item">
+            <view style="width:100%">
+                <image src="../../icons/1.png" mode="widthFix"></image>
+            </view>
+            <text class="goods_name">商品名称\n</text>
+            <view>
+                <text class="goods_price">￥10</text>
+                <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+            </view>
+        </view>
+         <view class="goods_item">
+            <view style="width:100%">
+                <image src="../../icons/1.png" mode="widthFix"></image>
+            </view>
+            <text class="goods_name">商品名称\n</text>
+            <view>
+                <text class="goods_price">￥10</text>
+                <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+            </view>
+        </view>
+         <view class="goods_item">
+            <view style="width:100%">
+                <image src="../../icons/1.png" mode="widthFix"></image>
+            </view>
+            <text class="goods_name">商品名称\n</text>
+            <view>
+                <text class="goods_price">￥10</text>
+                <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+            </view>
+        </view>
+         <view class="goods_item">
+            <view style="width:100%">
+                <image src="../../icons/1.png" mode="widthFix"></image>
+            </view>
+            <text class="goods_name">商品名称\n</text>
+            <view>
+                <text class="goods_price">￥10</text>
+                <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+            </view>
+        </view>
+    </view>
+    <!--底部工具栏-->
+    <view class="footer_tool">
+        <!--全选-->
+        <view class="all_chk_wrap">
+            <checkbox-group bindchange="">
+               <checkbox><text class="chk_text">全选</text></checkbox>
+            </checkbox-group>
+        </view>
+        <!--总价格-->
+        <view class="total_price_wrap">
+            <view class="total_price">
+                合计：<text class="total_price_text">￥999</text>
+            </view>
+            <view class="total_discount">
+                （已优惠<text class="total_discount_text">￥20</text>）
+            </view>
+        </view>
+        <!--结算-->
+        <view class="order_pay_wrap">
+            结算(2)
+        </view>
+    </view>
+</view>

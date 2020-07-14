@@ -1,1 +1,112 @@
 /* pages/category/index.wxss */
+page{
+    height: 100%;
+}
+.main{
+    height: 100%;
+    background: #f8f8f8;
+}
+.poor_bk{
+    width: 100%;
+    height: 60rpx;
+    background: #3a4058;
+    border-bottom-left-radius: 50rpx;
+    border-bottom-right-radius: 50rpx;
+}
+.gk_img_box{
+    width: 96%;
+    margin-left: 2%;
+    margin-top: -50rpx;
+    height: 184rpx;
+    border-radius: 30rpx;
+    overflow: hidden;
+    transform: translateY(0);
+}
+.gk_img_box image{
+    width: 100%;
+    border-radius: 30rpx;
+}
+
+/*商品分类*/
+.contanier{
+    display: flex;
+    height: 850rpx;
+}
+.left{
+    width: 24%;
+    margin-left: 2%;
+    background-color: #ffffff;
+}
+.right{
+    width: 70%;
+    margin-left: 2%;
+    background-color: #ffffff;
+}
+.tag_item{
+    height: 88rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: FZLanTingHei-L-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #000000;
+}
+.tag_item_active{
+    color: #8d8eab;
+    background-color: #f8f8f8;
+}
+.active_border{
+    position: relative;
+    left: -38rpx;
+    width: 10rpx;
+	height: 50rpx;
+	background-color: #8d8eab;
+}
+.good_item{
+    display: flex;
+    height: 202rpx;
+}
+.good_img{
+    width: 46%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.good_img image{
+    height: 168rpx;
+    width: 168rpx;
+}
+.good_content{
+    width: 64%;
+    border-bottom: solid 2rpx #f8f8f8;
+}
+.good_name{
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+	color: #000000;
+}
+.good_xianzhi{
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 18rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+	color: #8d8eab;
+}
+.good_price{
+    font-family: FZLanTingHei-B-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+	color: #f7937b;
+}
