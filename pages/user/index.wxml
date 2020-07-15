@@ -1,7 +1,7 @@
 <view class="main">
     <!--个人信息-->
     <view class="person_info">
-        <view class="msg_box">
+        <view class="selfmsg_box">
             <view class="tx">
                 <image mode="widthFix" src="../../icons/2.png" ></image>
             </view>
@@ -28,8 +28,20 @@
     </view>
     <!--订单们-->
     <view class="good_item">
-        <view class="msg_box"></view>
-        <view class="imgs_box"></view>
-        <view class="price_box"></view>
+        <view class="msg_box">
+             <text class="ziti">自提</text>
+             <text class="date">2020年11月1日</text>
+             <text class="isFinish">已完成</text>
+        </view>
+        <view class="imgs_box">
+            <image src="../../icons/3.png" mode="aspectFit"></image>
+             <image src="../../icons/3.png" mode="aspectFit"></image>
+              <image src="../../icons/3.png" mode="aspectFit"></image>
+              <view class="imgs_more">. . .</view>
+              <view class="good_number">共11件</view>
+        </view>
+        <view class="price_box">
+            合计：<text class="price">￥120</text>
+        </view>
     </view>
 </view>

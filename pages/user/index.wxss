@@ -1,6 +1,7 @@
 .person_info {
     width: 100%;
     height: 250rpx;
+    padding-top: 20rpx;
     background-image: linear-gradient(180deg, #3a4058 0%, #3a4058 100%);
     position: relative;
 }
@@ -15,7 +16,7 @@
       z-index: -1;
       border-radius: 0 0 80% 80%;
 }
-.msg_box{
+.selfmsg_box{
     width: 92%;
     height: 116rpx;
     margin-left: 4%;
@@ -142,6 +143,44 @@
     height: 96rpx;
     margin-left: 4%;
     display: flex;
+    align-items: center;
+}
+.ziti{
+    width: 114rpx;
+	height: 34rpx;
+	background-color: #d4b5b2;
+	border-radius: 10rpx;
+	opacity: 0.35;
+    padding-left: 32rpx;
+    padding-right: 32rpx;
+	font-family: FZLanTingHei-L-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 34rpx;
+	letter-spacing: 0rpx;
+	color: #a28482;
+}
+.date{
+    margin-left: 32rpx;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+	color: #000000;
+}
+.isFinish{
+    margin-left: auto;
+    margin-right: 34rpx;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 20rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+	color: #a28482;
 }
 .imgs_box{
     width: 91%;
@@ -150,9 +189,55 @@
     background-color: #f8f8f8;
     border-radius: 10rpx;
     display: flex;
+    align-items: center;
+}
+.imgs_box image{
+    margin-left: 2%;
+    width: 104rpx;
+	height: 104rpx;
+	background-image: linear-gradient(90deg, 
+		);
+	border-radius: 4rpx;
+}
+.imgs_more{
+    margin-left: 2%;
+    text-align: center;
+    width: 102rpx;
+	height: 102rpx;
+	background-color: #cdcaca;
+    border-radius: 4rpx;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 40rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 82rpx;
+	letter-spacing: 0rpx;
+	color: #6d6d6d;
+}
+.good_number{
+    margin-left: auto;
+    margin-right: 5%;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 18rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+	color: #000000;
 }
 .price_box{
-    width: 100%;
+    width: 91%;
+    margin-left: 4%;
     height: 64rpx;
     display: flex;
+    justify-content:flex-end;
+}
+.price{
+    font-family: FZLanTingHei-B-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+	color: #f7937b;
 }
