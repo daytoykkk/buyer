@@ -74,23 +74,28 @@ page{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 .good_img image{
     height: 168rpx;
     width: 168rpx;
 }
 .good_content{
-    width: 64%;
+    width: 62%;
     border-bottom: solid 2rpx #f8f8f8;
 }
 .good_name{
+    width: 90%;
     font-family: FZLanTingHei-R-GBK;
 	font-size: 24rpx;
 	font-weight: normal;
 	font-stretch: normal;
 	line-height: 60rpx;
 	letter-spacing: 0rpx;
-	color: #000000;
+    color: #000000;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .good_xianzhi{
     font-family: FZLanTingHei-R-GBK;

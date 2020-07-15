@@ -55,63 +55,216 @@ Page({
         discount:10,
         condition:"满150元可使用"
       }
-    ]
+    ],
+    tags:[
+      {
+        name:"进口食品",
+        isActive:true
+      },
+      {
+        name:"罐头食品",
+        isActive:false
+      },
+      {
+        name:"地方特产",
+        isActive:false
+      },
+      {
+          name:"猜你喜欢",
+          isActive:false
+      }
+    ],
+    popList:[],
+    popImgs:[],
+    goodList:[],
+    goodImgs:[],
+    currentIndex:0,
+    currentTag:"进口食品"
   },
+   //获取小标签对应的商品
+   getTagGood(item){
+    let {index}=item.currentTarget.dataset
+    let currentTag=this.data.tags[index].name
+    this.setData({
+      currentIndex:index,
+      currentTag
+    })
+
+    this.getMsg()
+ },
+  //商品
   getMsg(){
-    var that = this
-    console.log("hhhh")
-    wx.request({   //请求地址
+    let that = this
+    that.data.goodList=[]
+    wx.request({ 
       url: 'http://111.230.173.74:7008/thread/getTag/',
       method: 'get',    
       data:{
-        ProductTag:"猜你喜欢"
+        ProductTag:that.data.currentTag
       },
-      header: {  //请求头
+      header: { 
         'content-type': 'application/json'
-        // "Content-Type": "application/x-www-form-urlencoded"
       },
-      //如果在sucess直接写this就变成了wx.request()的this了
       success: function (res) {
-        // res.data相当于ajax里面的data,为后台返回的数据
-        //打印后台返回的数据
-        console.log(res.data)
-        //直接把后台返回的数据 赋值给names 就可以直接调用names了
+        that.setData({
+          goodList:res.data.这个标签的货物
+        })
+        let len=that.data.goodList.length;
+        for(let i=0;i<len;i++){
+          that.getImgs(that.data.goodList[i].productId)
+        }
       },
       fail:function(err){
         console.log(err)
       }
     })
   },
-  //options(Object)
-  onLoad: function(options){
-    
+  //获取小标签对应的商品图片
+  getImgs(id){
+    let that = this
+    that.data.goodImgs=[]
+    wx.request({ 
+      url: 'http://111.230.173.74:7001/consumer/showProductImage/',
+      method: 'get',    
+      data:{
+        ProductId:id
+      },
+      header: { 
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+       let len=res.data.对应货物的图片.length
+       for(let i=0;i<len;i++){
+         if(res.data.对应货物的图片[i].imageState=="main"){
+           let imgs=that.data.goodImgs;
+           imgs.push( "http://111.230.173.74:7001/consumer/showEInvoice/?FileName=" +
+           res.data.对应货物的图片[i].imageName)
+           that.setData({
+             goodImgs:imgs
+           })
+           break;
+         }else{
+           continue
+         }
+       }
+      },
+      fail:function(err){
+        console.log(err)
+      }
+    })
   },
-  onReady: function(){
-    
+  //获取热门对应的商品
+  getPopGood(){
+    let that = this
+    wx.request({ 
+      url: 'http://111.230.173.74:7008/thread/getTag/',
+      method: 'get',    
+      data:{
+        ProductTag:"本周热门"
+      },
+      header: { 
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        that.setData({
+          popList:res.data.这个标签的货物
+        })
+       
+        for(let i=0;i<6;i++){
+          that.getPopImg(that.data.popList[i].productId)
+        }
+      },
+      fail:function(err){
+        console.log(err)
+      }
+    })
   },
-  onShow: function(){
-    
+  //获取热门对应图片
+  getPopImg(id){
+    let that = this
+    that.data.popImgs=[]
+    wx.request({ 
+      url: 'http://111.230.173.74:7001/consumer/showProductImage/',
+      method: 'get',    
+      data:{
+        ProductId:id
+      },
+      header: { 
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+       let len=res.data.对应货物的图片.length
+       for(let i=0;i<len;i++){
+         if(res.data.对应货物的图片[i].imageState=="main"){
+           let imgs=that.data.popImgs;
+           imgs.push( "http://111.230.173.74:7001/consumer/showEInvoice/?FileName=" +
+           res.data.对应货物的图片[i].imageName)
+           that.setData({
+             popImgs:imgs
+           })
+           break;
+         }else{
+           continue
+         }
+       }
+      },
+      fail:function(err){
+        console.log(err)
+      }
+    })
   },
-  onHide: function(){
+  //生命周期函数--监听页面加载
+  onLoad: function (options) {
+    this.getPopGood()
+     this.getMsg()
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
 
   },
-  onUnload: function(){
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
 
   },
-  onPullDownRefresh: function(){
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
 
   },
-  onReachBottom: function(){
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
 
   },
-  onShareAppMessage: function(){
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
 
   },
-  onPageScroll: function(){
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
 
   },
-  //item(index,pagePath,text)
-  onTabItemTap:function(item){
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
 
   }
 });

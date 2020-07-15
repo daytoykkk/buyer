@@ -12,26 +12,27 @@
         <!--左侧导航-->
         <scroll-view scroll-y class="left" >
             <view
-             class="tag_item {{index==0?'tag_item_active':''}}"
-             wx:for="{{tags}}"
+            wx:for="{{tags}}"
              wx:key="*this"
+             class="tag_item {{index==currentIndex?'tag_item_active':''}}"
+             data-index="{{index}}"
+             bindtap = "getGoods"
              >
-                 <view hidden="{{index!=0}}" class="active_border"></view>
+                 <view hidden="{{index!=currentIndex}}" class="active_border"></view>
                 {{item}}
             </view>
-              
         </scroll-view>
         <!--右侧-->
         <scroll-view scroll-y class="right">
-            <view class="good_item">
+            <view class="good_item" wx:for="{{list}}" wx:key="productId">
                 <view class="good_img">
-                    <image src="../../icons/1.png" mode="aspectFit"></image>
+                    <image src="{{imgs[index]}}" mode="aspectFit"></image>
                 </view>
                 <view class="good_content">
-                    <text class="good_name">商品名称\n</text>
-                    <text class="good_xianzhi">限购2件</text>
+                    <text class="good_name">{{item.productName}}\n</text>
+                    <text class="good_xianzhi">限购10件</text>
                     <view>
-                <text class="good_price">￥10</text>
+                <text class="good_price">￥{{item.productPrice}}</text>
                 <text style="clear:both;float:right;font-size:44rpx;margin-right:32rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
             </view>
                 </view>

@@ -53,39 +53,12 @@
             <text decode="{{true}}" class="quan_more">更多商品&nbsp;></text>
         </view>
         <view class="pop_goods">
-            <view class="pop_item">
-                <image src="../../icons/1.png" mode="aspectFill"></image>
+            <view class="pop_item" wx:for="{{popList}}" wx:key="index">
+                <image src="{{popImgs[index]}}" mode="aspectFill"></image>
                 \n
-                <text class="pop_name">商品名称\n</text>
+                <text class="pop_name">{{item.productName}}\n</text>
                 <view>
-                    <text class="pop_price">￥10</text>
-                    <text style="clear:both;float:right;font-size:44rpx;margin-right:10rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
-                </view>
-            </view>
-            <view class="pop_item">
-                <image src="../../icons/1.png" mode="aspectFill"></image>
-                \n
-                <text class="pop_name">商品名称\n</text>
-                <view>
-                    <text class="pop_price">￥10</text>
-                    <text style="clear:both;float:right;font-size:44rpx;margin-right:10rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
-                </view>
-            </view>
-            <view class="pop_item">
-                <image src="../../icons/1.png" mode="aspectFill"></image>
-                \n
-                <text class="pop_name">商品名称\n</text>
-                <view>
-                    <text class="pop_price">￥10</text>
-                    <text style="clear:both;float:right;font-size:44rpx;margin-right:10rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
-                </view>
-            </view>
-            <view class="pop_item">
-                <image src="../../icons/1.png" mode="aspectFill"></image>
-                \n
-                <text class="pop_name">商品名称\n</text>
-                <view>
-                    <text class="pop_price">￥10</text>
+                    <text class="pop_price">￥{{item.productPrice}}</text>
                     <text style="clear:both;float:right;font-size:44rpx;margin-right:10rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
                 </view>
             </view>
@@ -93,60 +66,25 @@
     </view>
     <!-- 小标签 -->
     <view class="tags_box">
-        <text class="tags_name tags_name_active">进口食品</text>
-        <text class="tags_name">罐头食品</text>
-        <text class="tags_name">地方特产</text>
-        <text class="tags_name">猜你喜欢</text>
+        <text 
+        wx:for="{{tags}}" 
+        wx:key="name" 
+        data-index="{{index}}"
+        class="tags_name {{currentIndex==index?'tags_name_active':''}}"
+        bindtap = "getTagGood"
+        >
+            {{item.name}}
+        </text>
     </view>
     <!-- 标签对应商品 -->
     <view class="goods_box">
-        <view class="goods_item">
-            <view style="width:100%">
-                <image src="../../icons/1.png" mode="widthFix"></image>
+        <view class="goods_item" wx:for="{{goodList}}" wx:key="productId">
+            <view style="width:100%;overflow:hidden;">
+                <image src="{{goodImgs[index]}}" style="height:330rpx;width:330rpx;"></image>
             </view>
-            <text class="goods_name">商品名称\n</text>
+            <text class="goods_name">{{item.productName}}\n</text>
             <view>
-                <text class="goods_price">￥10</text>
-                <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
-            </view>
-        </view>
-         <view class="goods_item">
-            <view style="width:100%">
-                <image src="../../icons/1.png" mode="widthFix"></image>
-            </view>
-            <text class="goods_name">商品名称\n</text>
-            <view>
-                <text class="goods_price">￥10</text>
-                <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
-            </view>
-        </view>
-         <view class="goods_item">
-            <view style="width:100%">
-                <image src="../../icons/1.png" mode="widthFix"></image>
-            </view>
-            <text class="goods_name">商品名称\n</text>
-            <view>
-                <text class="goods_price">￥10</text>
-                <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
-            </view>
-        </view>
-         <view class="goods_item">
-            <view style="width:100%">
-                <image src="../../icons/1.png" mode="widthFix"></image>
-            </view>
-            <text class="goods_name">商品名称\n</text>
-            <view>
-                <text class="goods_price">￥10</text>
-                <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
-            </view>
-        </view>
-         <view class="goods_item">
-            <view style="width:100%">
-                <image src="../../icons/1.png" mode="widthFix"></image>
-            </view>
-            <text class="goods_name">商品名称\n</text>
-            <view>
-                <text class="goods_price">￥10</text>
+                <text class="goods_price">￥{{item.productPrice}}</text>
                 <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
             </view>
         </view>
