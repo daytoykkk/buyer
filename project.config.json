@@ -25,7 +25,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.0",
-	"appid": "wx94ecca443e7a4d60",
+	"appid": "wxada45d39286a57ea",
 	"projectname": "%E5%85%A8%E5%91%98%E6%B8%A3%E7%94%B7",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -59,8 +59,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/login/index",
-					"pathName": "pages/login/index",
+					"name": "pages/pay/index",
+					"pathName": "pages/pay/index",
 					"query": "",
 					"scene": null
 				}

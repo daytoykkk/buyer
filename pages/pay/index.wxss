@@ -1,1 +1,274 @@
 /* pages/pay/index.wxss */
+page{
+    background-color: #f8f8f8;
+}
+.ziti{
+    width: 100%;
+	height: 96rpx;
+    background-color: #ffffff;
+    padding-left: 32rpx;
+    display: flex;
+    align-items: center;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+	color: #3a4058;
+}
+.choose_btn{
+    margin-left: auto;
+    margin-right: 34rpx;
+}
+
+/*商品*/
+.box{
+    width: 100%;
+    padding-left: 32rpx;
+    padding-bottom: 16rpx;
+    background-color: #ffffff;
+}
+.title_box{
+    width: 91%;
+    height: 92rpx;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+    color: #000000;
+    display: flex;
+    align-items: center;
+}
+.title{
+    width: 114rpx;
+	height: 34rpx;
+	background-color: #d4b5b2;
+	border-radius: 10rpx;
+    opacity: 0.35;
+    text-align: center;
+	font-family: FZLanTingHei-L-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 34rpx;
+	letter-spacing: 0rpx;
+    color: #a28482;
+    margin-right: 32rpx;
+}
+
+/*单件商品*/
+.good_item{
+    width: 91%;
+    height: 160rpx;
+    background-color: #f8f8f8;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16rpx;
+}
+.img{
+    width: 106rpx;
+    height: 106rpx;
+    margin-left: 32rpx;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+.img image{
+    width: 106rpx;
+    height: 106rpx;
+}
+.name{
+    height: 106rpx;
+    width: 370rpx;
+    margin-left: 32rpx;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+    color: #000000;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}
+.price_number{
+    height: 106rpx;
+    width: 110rpx;
+    margin-left: auto;
+    margin-right: 14rpx;
+}
+.price{
+    width: 118rpx;
+    font-family: FZLanTingHei-B-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+    color: #6d6d6d;
+    text-align: center;
+}
+.number{
+    width: 118rpx;
+    font-family: FZLanTingHei-B-GBK;
+	font-size: 20rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+    color: #6d6d6d;
+    text-align: center;
+}
+
+/*优惠券和买家留言*/
+.quan_msg{
+    width: 100%;
+    height: 182rpx;
+    background-color: #ffffff;
+}
+.quan{
+    width: 91%;
+    margin-left: 4%;
+    height: 88rpx;
+    display: flex;
+    align-items: center;
+    border: solid 2rpx #f8f8f8;
+}
+.quan_title{
+    font-family: FZLanTingHei-B-GBK;
+	font-size: 30rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 30rpx;
+	letter-spacing: 0rpx;
+	color: #f7937b;
+}
+.discount{
+    margin-left: 32rpx;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 20rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 20rpx;
+	letter-spacing: 0rpx;
+	color: #929090;
+}
+.quan_chosen{
+    margin-left: auto;
+    margin-right: 0;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 24rpx;
+	letter-spacing: 0rpx;
+	color: #929090;
+}
+.msg_box{
+    width: 91%;
+    height: 94rpx;
+    margin-left: 4%;
+    display: flex;
+    align-items: center;
+}
+.msg_title{
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 24rpx;
+	letter-spacing: 0rpx;
+	color: #000000;
+}
+.msg_input{
+    margin-left: 32rpx;
+    font-family: FZLanTingHei-L-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+	color: #cdcaca;
+}
+
+/*商品总额和优惠*/
+.allprice_quan{
+    width: 100%;
+    height: 156rpx;
+    background-color: #ffffff;
+    margin-top: 16rpx;
+    font-size: 24rpx;
+    font-family: FZLanTingHei-R-GBK;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #000000;
+}
+.all_quan{
+    width: 91%;
+    height: 78rpx;
+    margin-left: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.all_price{
+    width: 91%;
+    height: 78rpx;
+    margin-left: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/*底部工具栏*/
+.footer_tool{
+    position: fixed;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 100rpx;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+}
+.footer_title{
+    width: 64rpx;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 20rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 20rpx;
+	letter-spacing: 0rpx;
+	color: #000000;
+}
+.footer_price{
+    margin-right: 32rpx;
+	font-family: FZLanTingHei-B-GBK;
+	font-size: 30rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+	color: #f7937b;
+}
+.submit{
+    margin-right: 32rpx;
+    width: 164rpx;
+	height: 52rpx;
+	background-color: #3a4058;
+    border-radius: 26rpx;
+    text-align: center;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 52rpx;
+	letter-spacing: 0rpx;
+	color: #ffffff;
+}

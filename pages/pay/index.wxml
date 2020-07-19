@@ -1,1 +1,55 @@
-<view class="jjj">hhh</view>
+<view>
+    <!--自提时间-->
+    <view class="ziti">
+        请确定自提时间
+        <view class="choose_btn">></view>
+    </view>
+    <!--商品-->
+    <view class="box">
+        <view class="title_box">
+            <view class="title">自提</view>
+            共4件商品
+        </view>
+        <view class="good_item">
+            <view class="img">
+                <image src="../../icons/1.png"></image>
+            </view>
+            <view class="name">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</view>
+            <view class="price_number">
+                <view class="price">￥10</view>
+                <view class="number">x 1</view>
+            </view>
+        </view>
+    </view>
+    <!--优惠券和买家留言-->
+    <view class="quan_msg">
+        <view class="quan">
+            <view class="quan_title">优惠券</view>
+            <view class="discount">已减10元</view>
+            <view class="quan_chosen">已选一张 ></view>
+        </view>
+        <view class="msg_box">
+            <view class="msg_title">买家留言</view>
+            <view class="msg_input">
+                <input type="text" placeholder="填写给卖家的留言" bindinput="orderMsg"></input>
+            </view>
+        </view>
+    </view>
+    <!--优惠和商品总额-->
+    <view class="allprice_quan">
+        <view class="all_quan">
+            <view class="all_quan_title">优惠券</view>
+            <view class="all_quan_discount">-￥10</view>
+        </view>
+        <view class="all_price">
+            <view class="all_price_title">商品总额</view>
+            <view class="all_price_number">￥200</view>
+        </view>
+    </view>
+    <!--底部工具栏-->
+    <view class="footer_tool">
+        <view class="footer_title">合计：</view>
+        <view class="footer_price">￥200</view>
+        <view class="submit">提交订单</view>
+    </view>
+</view>
