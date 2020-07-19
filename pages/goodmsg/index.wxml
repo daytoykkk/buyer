@@ -1,2 +1,58 @@
-<!--pages/goodmsg/index.wxml-->
-<text>pages/goodmsg/index.wxml</text>
+<view>
+    <!-- 图片 -->
+    <view style="position:relative;width:750rpx;height:750rpx;overflow:hidden;">
+        <swiper class="scroll_box" scroll-x autoplay indicator-dots circular interval="3000">
+            <swiper-item class="swiper_item" wx:for="{{goodImgs}}" wx:key="index">
+                <image src="{{item}}"></image>
+            </swiper-item>
+        </swiper>
+        <view class="share_box">分享</view>
+    </view>
+    <!-- 标题价格 -->
+    <view class="title_box">
+        <view class="title_view">{{msg.productName}}</view>
+        <view class="price_view">￥{{msg.productPrice}}</view>
+        <view class="sales_view">已售10{{msg.productUnit}}</view>
+    </view>
+    <!-- 优惠券 -->
+    <view class="discount_box">
+        <view class="discount_title">领券</view>
+        <view class="discount_number">可领一张 ></view>
+    </view>
+    <!-- 七天无理由 -->
+    <view class="tuihuo" hidden="{{!msg.productChange}}">7天无理由退换货</view>
+    <!-- 商品详情分割线 -->
+    <view class="separation">
+        <view class="separation_text">商品详情</view>
+        <view class="separation_line"></view>
+    </view>
+    <!-- 商品详情 -->
+    <view class="content_box">
+        <text class="shuxing">商品标语：</text>
+        <text class="content">{{msg.productLevel}}\n</text>
+        <text class="shuxing" decode = "{{true}}">品&emsp;&emsp;牌：</text>
+        <text class="content">{{msg.productBrand}}\n</text>
+        <text class="shuxing" decode = "{{true}}">库&emsp;&emsp;存：</text>
+        <text class="content">{{msg.productSurplus}}\n</text>
+        <text class="shuxing">商品产地：</text>
+        <text class="content">{{msg.productPlace}}\n</text>
+        <text class="shuxing" decode = "{{true}}">单&emsp;&emsp;位：</text>
+        <text class="content">{{msg.productUnit}}\n</text>
+        <text class="shuxing" decode = "{{true}}">保&ensp;质&ensp;期：</text>
+        <text class="content">{{msg.productDdl}}\n</text>
+        <text class="shuxing" decode = "{{true}}">净&ensp;含&ensp;量：</text>
+        <text class="content">{{msg.productContent}}\n</text>
+        <text class="shuxing">商品描述：</text>
+        <text class="content">{{msg.productDescription}}</text>
+    </view>
+    <!--底部工具栏-->
+   <view class="btm_tool">
+       <view class="cart" bindtap = "toCart">
+        <image src="../../icons/cart_ys.png" style="width:44rpx;height:44rpx;"></image>
+       </view>
+       <view class="add_cart" bindtap = "addCart">加入购物车</view>
+       <view class="buy">立即购买</view>
+   </view>
+     
+
+</view>

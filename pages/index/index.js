@@ -213,6 +213,13 @@ Page({
       }
     })
   },
+  //去商品详情页
+  toGoodMsg(item){
+    let name=item.currentTarget.dataset.item.productName;
+    wx.navigateTo({
+      url: '/pages/goodmsg/index?productname='+name
+    });
+ },
   //生命周期函数--监听页面加载
   onLoad: function (options) {
     this.getPopGood()

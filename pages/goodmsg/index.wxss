@@ -1,1 +1,249 @@
 /* pages/goodmsg/index.wxss */
+page{
+    background-color: #f8f8f8;
+}
+/*轮播图*/
+.scroll_box{
+    width: 750rpx;
+    height: 750rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(0);
+}
+.swiper_item{
+    display: inline-block;
+}
+.swiper_item image{
+    width: 750rpx;
+    height: 750rpx;
+}
+.share_box{ 
+    position: absolute;
+    margin-top: -702rpx;
+    margin-left: 597rpx;
+    width: 154rpx;
+	height: 60rpx;
+	background-color: #8d8eab;
+    border-radius: 30rpx 0rpx 0rpx 30rpx;
+    text-align: center;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 30rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+	color: #ffffff;
+}
+
+/*标题*/
+.title_box{
+    width: 96%;
+    height: 256rpx;
+    margin-left: 2%;
+    margin-top: 16rpx;
+    padding-top: 32rpx;
+	background-color: #ffffff;
+	border-radius: 10rpx;
+}
+.title_view{
+    margin-left: 32rpx;
+    width: 680rpx;
+    height: 44rpx;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 44rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 44rpx;
+	letter-spacing: 0rpx;
+    color: #000000;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+.price_view{
+    margin-top: 30rpx;
+    margin-left: 32rpx;
+    font-family: FZLanTingHei-B-GBK;
+	font-size: 44rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 52rpx;
+	letter-spacing: 0rpx;
+	color: #f7937b;
+}
+.sales_view{
+    margin-top: 32rpx;
+    margin-left: 32rpx;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 28rpx;
+	letter-spacing: 0rpx;
+	color: #929090;
+}
+
+/*优惠券*/
+.discount_box{
+    width: 96%;
+    height: 33px;
+	background-color: #ffffff;
+	border-radius: 5px;
+    margin-left: 2%;
+    margin-top: 8rpx;
+    display: flex;
+    align-items: center;
+}
+.discount_title{
+    margin-left: 16rpx;
+    font-family: FZLanTingHei-B-GBK;
+	font-size: 12px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 30px;
+	letter-spacing: 0px;
+	color: #f7937b;
+}
+.discount_number{
+    margin-left: auto;
+    margin-right: 16rpx;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 12px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 30px;
+	letter-spacing: 0px;
+	color: #8d8eab;
+}
+
+/*七天无理由*/
+.tuihuo{
+    margin-top: 8rpx;
+    margin-left: 2%;
+    width: 96%;
+	height: 33px;
+	background-color: #ffffff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 12px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 14px;
+	letter-spacing: 0px;
+	color: #8d8eab;
+}
+
+/*商品详情分割*/
+.separation{
+    width: 96%;
+    height: 33px;
+    margin-left: 2%;
+    margin-top: 8rpx;
+    position: relative;
+    border: 1px solid #f8f8f8;
+}
+.separation_line{
+    margin-top: 32rpx;
+    width: 100%;
+    border: solid 1px #cdcaca;
+}
+.separation_text{
+    position: absolute;
+    margin-left: 290rpx;
+    width: 152rpx;
+    text-align: center;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+    font-stretch: normal;
+    line-height: 66rpx;
+	letter-spacing: 0rpx;
+	color: #000000;
+    background-color: #f8f8f8;
+}
+
+/*详情*/
+.content_box{
+    width: 96%;
+    margin-left: 2%;
+    padding-top: 34rpx;
+    padding-left: 44rpx;
+    padding-bottom: 30rpx;
+    background-color: #ffffff;
+}
+.shuxing{
+    width: 120rpx;
+	height: 46rpx;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	letter-spacing: 0rpx;
+    color: #929090;
+}
+.content{
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 30rpx;
+	letter-spacing: 0rpx;
+	color: #000000;
+}
+
+/*底部工具栏*/
+.btm_tool{
+    width: 100%;
+    height: 100rpx;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    border-top: 2rpx solid #f8f8f8;
+    display: flex;
+    align-items: center;
+}
+.cart{
+    height: 66rpx;
+    width: 66rpx;
+    margin-left: 32rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add_cart{
+    width: 272rpx;
+	height: 66rpx;
+	border-radius: 34rpx;
+    border: solid 2rpx #8d8eab;
+    text-align: center;
+    font-family: FZLanTingHei-L-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+    color: #8d8eab;
+    margin-left: 56rpx;
+}
+.buy{
+    width: 272rpx;
+	height: 66rpx;
+	background-color: #8d8eab;
+	border-radius: 34rpx;
+    border: solid 2rpx #8d8eab;
+    text-align: center;
+    font-family: FZLanTingHei-L-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0rpx;
+    color: #ffffff;
+    margin-left: 18rpx;
+}

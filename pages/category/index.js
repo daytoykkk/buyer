@@ -76,6 +76,12 @@ Page({
     }
   })
  },
+ toGoodMsg(item){
+    let name=item.currentTarget.dataset.item.productName;
+    wx.navigateTo({
+      url: '/pages/goodmsg/index?productname='+name
+    });
+ },
   /**
    * 生命周期函数--监听页面加载
    */
