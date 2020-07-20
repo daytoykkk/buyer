@@ -3,11 +3,11 @@
     <view class="person_info">
         <view class="selfmsg_box">
             <view class="tx">
-                <image mode="widthFix" src="../../icons/2.png" ></image>
+                <image mode="widthFix" src="{{imgUrl}}" ></image>
             </view>
             <view class="msg">
-                <text class="msg_name">一颗呆桃\n</text>
-                <text class="msg_id">id:123456789</text>
+                <text class="msg_name">{{name}}\n</text>
+                <text class="msg_id">城市：{{city}}</text>
             </view>
         </view>
     </view>

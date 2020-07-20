@@ -15,7 +15,7 @@
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
 		"checkInvalidKey": true,
-		"checkSiteMap": true,
+		"checkSiteMap": false,
 		"uploadWithSourceMap": true,
 		"babelSetting": {
 			"ignore": [],
@@ -59,8 +59,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/pay/index",
-					"pathName": "pages/pay/index",
+					"name": "pages/search/index",
+					"pathName": "pages/search/index",
 					"query": "",
 					"scene": null
 				}

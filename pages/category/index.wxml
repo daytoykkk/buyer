@@ -24,16 +24,16 @@
         </scroll-view>
         <!--右侧-->
         <scroll-view scroll-y class="right">
-            <view class="good_item" wx:for="{{list}}" wx:key="productId" data-item="{{item}}" bindtap = "toGoodMsg">
+            <view class="good_item" wx:for="{{list}}" wx:key="productId" data-item="{{item}}" data-item="{{item}}" bindtap = "toGoodMsg">
                 <view class="good_img">
-                    <image src="{{imgs[index]}}" mode="aspectFit"></image>
+                    <image data-item="{{item}}" bindtap = "toGoodMsg" src="{{imgs[index]}}" mode="aspectFit"></image>
                 </view>
                 <view class="good_content">
-                    <text class="good_name">{{item.productName}}\n</text>
-                    <text class="good_xianzhi">限购10件</text>
+                    <text data-item="{{item}}" bindtap = "toGoodMsg" class="good_name">{{item.productName}}\n</text>
+                    <text data-item="{{item}}" bindtap = "toGoodMsg" class="good_xianzhi">限购10件</text>
                     <view>
-                <text class="good_price">￥{{item.productPrice}}</text>
-                <text style="clear:both;float:right;font-size:44rpx;margin-right:32rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+                <text data-item="{{item}}" bindtap = "toGoodMsg" class="good_price">￥{{item.productPrice}}</text>
+                <text data-item="{{item}}" bindtap = "sendCart" style="clear:both;float:right;font-size:44rpx;margin-right:32rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
             </view>
                 </view>
             </view>

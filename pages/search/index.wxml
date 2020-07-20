@@ -1,2 +1,24 @@
-<!--pages/search/index.wxml-->
-<text>pages/search/index.wxml</text>
+<view class="main">
+    <!-- 搜索框 -->
+    <view class="search_box">
+        <view class="search_input">
+            <icon class="icon_small" type="search" size="23"></icon>
+            <input class="weui_input search_input_text" maxlength="15" placeholder="搜索想要的商品" />
+            <icon class="icon_cancel" type="cancel" size="23" color="#b2b2b2"></icon>
+        </view>
+        <view class="cancel_text" bindtap="back">取消</view>
+    </view>
+    <!-- 商品 -->
+    <view class="good_item">
+        <view class="img">
+            <image src="../../icons/1.png"></image>
+        </view>
+        <view class="good_msg">
+            <view class="name">hhhhhhhhhhhhhhhhhhh</view>
+            <view class="price_cart">
+                <view class="price">￥10</view>
+                <text style="margin-left:auto;font-size:44rpx;margin-right:0;" class="iconfont .icon-gouwuchelandi-041"></text>
+            </view>
+        </view>
+    </view>
+</view>

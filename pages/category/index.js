@@ -82,6 +82,36 @@ Page({
       url: '/pages/goodmsg/index?productname='+name
     });
  },
+ //加入购物车
+sendCart(item){
+  let that=this;
+  let id=wx.getStorageSync("openid");
+  let product=JSON.stringify(item.currentTarget.dataset.item)
+
+  wx.request({  
+    url: 'http://111.230.173.74:7008/thread/sendCart/',
+    method: 'get',    
+    data:{
+      Id:JSON.stringify(id),
+      Products:JSON.stringify(product)
+    },
+    header: {  
+      'Content-Type': 'application/json'
+    },
+    success: function (res) {
+      if(res.data=="OK"){
+        wx.showToast({
+          title:"成功加入购物车",
+          icon:'success',
+          duration:2000
+        })
+      }
+    },
+    fail:function(err){
+      console.log(err)
+    }
+  })
+},
   /**
    * 生命周期函数--监听页面加载
    */

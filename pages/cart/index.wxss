@@ -80,9 +80,14 @@ page{
 	font-size: 24rpx;
 	font-weight: normal;
 	font-stretch: normal;
-	line-height: 60rpx;
+	line-height: 26rpx;
 	letter-spacing: 0rpx;
-	color: #000000;
+    color: #000000;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2;
 }
 .good_price{
     font-family: FZLanTingHei-B-GBK;
