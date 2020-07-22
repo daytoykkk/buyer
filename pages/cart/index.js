@@ -7,7 +7,59 @@ Page({
     totalNumber: 0,//选择数量
     totalPrice: 0,//总价格
     allChecked: false,
-    list_chosen: []
+    list_chosen: [],
+    currentX: 0
+  },
+  handleMovableChange(e) {
+    this.data.currentX = e.detail.x;
+  },
+  handleTouchend(index, e) {
+    /* console.log(e)
+     console.log(index)*/
+    /*let {list}=this.data.list;
+    if(this.data.currentX<-46){
+      list[idx].x=-92
+      this.setData({
+        list:list
+      })
+     }else{
+      list[idx].x=0
+      this.setData({
+        list:list
+      })
+     }*/
+  },
+  handleDel(e) {
+    let { item } = e.currentTarget.dataset
+    delete item.checked
+    delete item.productNumber
+    delete item.x
+    let id = wx.getStorageSync("openid")
+    wx.request({
+      url: 'http://111.230.173.74:7008/thread/daddCart/',
+      method: 'get',
+      data: {
+        Products: JSON.stringify(item),
+        Id: JSON.stringify(id)
+      },
+      header: {
+        'content-type': 'application/json'
+        // "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function (res) {
+        if (res.data == "OK") {
+          wx.showToast({
+            title: '删除成功',
+            icon: 'success',
+            duration: 1500
+          })
+          that.onShow()
+        }
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    })
   },
   getMsg() {
     let that = this;
@@ -29,6 +81,7 @@ Page({
         lists.forEach((i) => {
           i.productNumber = 1;
           i.checked = false;
+          i.x = 0;
         })
         let allchk = lists.every(v => v.checked)
         that.setData({
@@ -131,31 +184,51 @@ Page({
       totalPrice,
       allChecked
     })
+    wx.setStorageSync("totalNumber", totalNumber)
+    wx.setStorageSync("cart", cart);
+    wx.setStorageSync("totalPrice", totalPrice)
   },
   //商品全选功能
-  handleAllchk(){
-      let {list,allChecked}=this.data
-      allChecked=!allChecked;
-      list.forEach(v=>v.checked=allChecked)
-      this.setCart(list)
+  handleAllchk() {
+    let { list, allChecked } = this.data
+    allChecked = !allChecked;
+    list.forEach(v => v.checked = allChecked)
+    this.setCart(list)
   },
   //处理商品数量
-  handleNum(e){
-      let {operation,id}=e.currentTarget.dataset;
-      let {list}=this.data;
-      let index=list.findIndex(v=>v.productId===id)
-      if(list[index].productNumber==1&&operation==-1){
-        wx.showModal({
-          title: '提示',
-          showCancel:false,
-          content: '宝贝数量不能再减少了',
-          confirmText: '好呗',
-          confirmColor: '#575757'
-        });
-        return
-      }
-      list[index].productNumber+=operation;
-      this.setCart(list)
+  handleNum(e) {
+    let { operation, id } = e.currentTarget.dataset;
+    let { list } = this.data;
+    let index = list.findIndex(v => v.productId === id)
+    if (list[index].productNumber == 1 && operation == -1) {
+      wx.showModal({
+        title: '提示',
+        showCancel: false,
+        content: '宝贝数量不能再减少了',
+        confirmText: '好呗',
+        confirmColor: '#575757'
+      });
+      return
+    }
+    list[index].productNumber += operation;
+    this.setCart(list)
+  },
+  //结算
+  subCart() {
+    let that = this
+    if (that.data.totalNumber == 0) {
+      wx.showToast({
+        title: '请选择商品！',
+        icon: 'none',
+        duration: 2000
+      })
+
+      return;
+    }
+
+    wx.navigateTo({
+      url: '/pages/pay/index'
+    })
   },
   onLoad: function () {
   },

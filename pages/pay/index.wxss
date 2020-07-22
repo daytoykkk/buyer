@@ -61,7 +61,7 @@ page{
 
 /*单件商品*/
 .good_item{
-    width: 91%;
+    width: 92%;
     height: 160rpx;
     background-color: #f8f8f8;
     display: flex;
@@ -117,7 +117,7 @@ page{
 	font-size: 20rpx;
 	font-weight: normal;
 	font-stretch: normal;
-	line-height: 60rpx;
+	line-height: 40rpx;
 	letter-spacing: 0rpx;
     color: #6d6d6d;
     text-align: center;

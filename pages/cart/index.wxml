@@ -14,37 +14,48 @@
             </view>
         </view>
         <!-- 商品 -->
-        <view class="cart_item" wx:for="{{list}}" wx:key="productId">
-           <checkbox-group data-id="{{item.productId}}" bindchange="handleChk">
-                <checkbox checked="{{item.checked}}" style="margin-left:32rpx;"></checkbox>
-           </checkbox-group>
-            <view class="good_box">
-                <view class="good_image">
-                    <image src="{{imgUrl+item.productState}}" mode="widthFix" data-item="{{item}}" bindtap="toGoodMsg"></image>
-                </view>
-                <view class="good_content}}">
-                    <view class="good_name" data-item="{{item}}" bindtap="toGoodMsg">
-                        {{item.productName}}
-                    </view>
-                    <view class="good_price_box">
-                        <view class="good_price" data-item="{{item}}" bindtap="toGoodMsg">
-                            ￥{{item.productPrice}}
+       <block wx:if="{{list.length==0}}">
+           还没有添加任务宝贝噢，快去主页看看吧!
+       </block>
+       <block wx:else>
+            <view class="cart_item" wx:for="{{list}}" wx:key="productId">
+            <movable-area style="height:168rpx;">
+                <movable-view direction="horizontal" out-of-bounds="true" x="{{item.x}}" damping="100" animation="false" bindchange="handleMovableChange" bindtouchend="handleTouchend">
+                    <checkbox-group style="width:112rpx" data-id="{{item.productId}}" bindchange="handleChk">
+                        <checkbox checked="{{item.checked}}" style="margin-left:32rpx;"></checkbox>
+                    </checkbox-group>
+                    <view class="good_box">
+                        <view class="good_image">
+                            <image src="{{imgUrl+item.productState}}" mode="widthFix" data-item="{{item}}" bindtap="toGoodMsg"></image>
                         </view>
-                        <view class="plus_minis">
-                            <view class="minus" bindtap = "handleNum" data-id="{{item.productId}}" data-operation="{{-1}}">
-                                -
+                        <view class="good_content">
+                            <view class="good_name" data-item="{{item}}" bindtap="toGoodMsg">
+                                {{item.productName}}
                             </view>
-                            <view class="number" style="padding-left:6rpx;padding-right:6rpx;">
-                                {{item.productNumber}}
-                            </view>
-                            <view class="minus" bindtap = "handleNum" data-id="{{item.productId}}" data-operation="{{1}}">
-                                +
+                            <view class="good_price_box">
+                                <view class="good_price" data-item="{{item}}" bindtap="toGoodMsg">
+                                    ￥{{item.productPrice}}
+                                </view>
+                                <view class="plus_minis">
+                                    <view class="minus" bindtap="handleNum" data-id="{{item.productId}}" data-operation="{{-1}}">
+                                        -
+                                    </view>
+                                    <view class="number" style="padding-left:6rpx;padding-right:6rpx;">
+                                        {{item.productNumber}}
+                                    </view>
+                                    <view class="minus" bindtap="handleNum" data-id="{{item.productId}}" data-operation="{{1}}">
+                                        +
+                                    </view>
+                                </view>
                             </view>
                         </view>
                     </view>
-                </view>
-            </view>
+                     <view class="delete_btn" data-item="{{item}}" bindtap="handleDel">删除</view>
+                </movable-view>
+            </movable-area>
+           
         </view>
+       </block>
     </view>
     <!-- 优惠券 -->
     <view class="discount">
@@ -97,6 +108,6 @@
             </view>
         </view>
         <!-- 结算 -->
-        <view class="order_pay_wrap">结算({{totalNumber}})</view>
+        <view class="order_pay_wrap" bindtap = "subCart">结算({{totalNumber}})</view>
     </view>
 </view>

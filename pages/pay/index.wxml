@@ -8,16 +8,16 @@
     <view class="box">
         <view class="title_box">
             <view class="title">自提</view>
-            共4件商品
+            共{{totalNumber}}件商品
         </view>
-        <view class="good_item">
+        <view class="good_item" wx:for="{{old_cart}}" wx:key="productId">
             <view class="img">
-                <image src="../../icons/1.png"></image>
+                <image src="{{imgUrl+item.productState}}"></image>
             </view>
-            <view class="name">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</view>
+            <view class="name">{{item.productName}}</view>
             <view class="price_number">
-                <view class="price">￥10</view>
-                <view class="number">x 1</view>
+                <view class="price">￥{{item.productPrice}}</view>
+                <view class="number">x {{item.productNumber}}</view>
             </view>
         </view>
     </view>
@@ -43,13 +43,13 @@
         </view>
         <view class="all_price">
             <view class="all_price_title">商品总额</view>
-            <view class="all_price_number">￥200</view>
+            <view class="all_price_number">￥{{totalPrice}}</view>
         </view>
     </view>
     <!--底部工具栏-->
     <view class="footer_tool">
         <view class="footer_title">合计：</view>
-        <view class="footer_price">￥200</view>
-        <view class="submit">提交订单</view>
+        <view class="footer_price">￥{{totalPrice}}</view>
+        <view class="submit" bindtap = "subOrder">提交订单</view>
     </view>
 </view>

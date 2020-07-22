@@ -62,12 +62,33 @@ page{
     height: 168rpx;
     border-radius: 24rpx;
     display: flex;
+    overflow: hidden;
+}
+movable-area{
+    width: 718rpx;
+    height: 168rpx;
+    background-color: #ffffff;
+}
+movable-view{
+    width: 810rpx;
+    height: 168rpx;
+    display: flex;
     align-items: center;
 }
-.good_box{
-    width: 83%;
+.delete_btn{
+    width: 92rpx;
     height: 168rpx;
-    margin-left: 6%;
+    background-color: #e56048;
+    border-radius: 24rpx;
+    color: #ffffff;
+    font-size: 22rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.good_box{
+    width:624rpx;
+    height: 168rpx;
     display: flex;
     align-items: center;
 }
@@ -81,7 +102,7 @@ page{
     height: 148rpx;
 }
 .good_content{
-    width: 61%;
+    width: 68%;
     margin-left: 32rpx;
     border-bottom: solid 2rpx #f8f8f8;
 }
@@ -116,7 +137,7 @@ page{
 }
 .plus_minis{
     margin-left: auto;
-    margin-right: 32rpx;
+    margin-right: 16rpx;
     display: flex;
     align-items: center;
 }
