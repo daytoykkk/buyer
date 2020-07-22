@@ -7,26 +7,38 @@
     <view class="cart_box">
         <view class="title">
             <text class="ziti">自提</text>
-            <text class="count_">共<text style="color: #8d8eab;">4</text>件商品</text>
+            <view class="count_">
+                共
+                <text style="color: #8d8eab;">{{number}}</text>
+                件商品
+            </view>
         </view>
         <!-- 商品 -->
         <view class="cart_item" wx:for="{{list}}" wx:key="productId">
-            <checkbox checked="{{false}}" style="margin-left:32rpx;"></checkbox>
+           <checkbox-group data-id="{{item.productId}}" bindchange="handleChk">
+                <checkbox checked="{{item.checked}}" style="margin-left:32rpx;"></checkbox>
+           </checkbox-group>
             <view class="good_box">
-                <image src="{{imgUrl+item.productState}}" mode="widthFix"></image>
-                <view class="good_content">
-                    <text class="good_name">{{item.productName}}</text>
+                <view class="good_image">
+                    <image src="{{imgUrl+item.productState}}" mode="widthFix" data-item="{{item}}" bindtap="toGoodMsg"></image>
+                </view>
+                <view class="good_content}}">
+                    <view class="good_name" data-item="{{item}}" bindtap="toGoodMsg">
+                        {{item.productName}}
+                    </view>
                     <view class="good_price_box">
-                        <text class="good_price">￥{{item.productPrice}}</text>
+                        <view class="good_price" data-item="{{item}}" bindtap="toGoodMsg">
+                            ￥{{item.productPrice}}
+                        </view>
                         <view class="plus_minis">
-                            <view class="minus">
-                                <text>-</text>
+                            <view class="minus" bindtap = "handleNum" data-id="{{item.productId}}" data-operation="{{-1}}">
+                                -
                             </view>
-                            <text class="number" style="padding-left:6rpx;padding-right:6rpx;">
-                               {{item.number}}
-                            </text>
-                            <view class="minus">
-                                <text>+</text>
+                            <view class="number" style="padding-left:6rpx;padding-right:6rpx;">
+                                {{item.productNumber}}
+                            </view>
+                            <view class="minus" bindtap = "handleNum" data-id="{{item.productId}}" data-operation="{{1}}">
+                                +
                             </view>
                         </view>
                     </view>
@@ -34,90 +46,57 @@
             </view>
         </view>
     </view>
-    <!--优惠券-->
+    <!-- 优惠券 -->
     <view class="discount">
         <text class="dis_name">优惠券</text>
         <text class="dis_price">已减10元</text>
         <text class="dis_quan" space="ensp">已选一张 ></text>
     </view>
-    <!--猜你喜欢-->
+    <!-- 猜你喜欢 -->
     <view class="guess">
         <view class="guess_line"></view>
         <view class="guess_word">猜你喜欢</view>
     </view>
-    <!--猜你喜欢商品-->
-     <view class="goods_box">
-        <view class="goods_item">
-            <view style="width:100%">
-                <image src="../../icons/1.png" mode="widthFix"></image>
+    <!-- 猜你喜欢商品 -->
+    <view class="goods_box">
+        <view class="goods_item" wx:for="{{popList}}" wx:key="productId">
+            <view class="pop_image" data-item="{{item}}" bindtap="toGoodMsg">
+                <image src="{{imgUrl+item.productState}}" mode="widthFix"></image>
             </view>
-            <text class="goods_name">商品名称\n</text>
-            <view>
-                <text class="goods_price">￥10</text>
-                <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+            <view class="goods_name" data-item="{{item}}" bindtap="toGoodMsg">
+                {{item.productName}}\n
             </view>
-        </view>
-         <view class="goods_item">
-            <view style="width:100%">
-                <image src="../../icons/1.png" mode="widthFix"></image>
-            </view>
-            <text class="goods_name">商品名称\n</text>
-            <view>
-                <text class="goods_price">￥10</text>
-                <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
-            </view>
-        </view>
-         <view class="goods_item">
-            <view style="width:100%">
-                <image src="../../icons/1.png" mode="widthFix"></image>
-            </view>
-            <text class="goods_name">商品名称\n</text>
-            <view>
-                <text class="goods_price">￥10</text>
-                <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
-            </view>
-        </view>
-         <view class="goods_item">
-            <view style="width:100%">
-                <image src="../../icons/1.png" mode="widthFix"></image>
-            </view>
-            <text class="goods_name">商品名称\n</text>
-            <view>
-                <text class="goods_price">￥10</text>
-                <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
-            </view>
-        </view>
-         <view class="goods_item">
-            <view style="width:100%">
-                <image src="../../icons/1.png" mode="widthFix"></image>
-            </view>
-            <text class="goods_name">商品名称\n</text>
-            <view>
-                <text class="goods_price">￥10</text>
-                <text style="clear:both;float:right;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+            <view style="width:100%;display:flex;">
+                <view class="goods_price" data-item="{{item}}" bindtap="toGoodMsg">
+                    ￥{{item.productPrice}}
+                </view>
+                <text data-item="{{item}}" bindtap="sendCart" style="margin-left:auto;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
             </view>
         </view>
     </view>
-    <!--底部工具栏-->
+    <!-- 底部工具栏 -->
     <view class="footer_tool">
-        <!--全选-->
+        <!-- 全选 -->
         <view class="all_chk_wrap">
-            <checkbox-group bindchange="">
-               <checkbox><text class="chk_text">全选</text></checkbox>
+            <checkbox-group bindchange="handleAllchk">
+                <checkbox checked="{{allChecked}}">
+                    <text class="chk_text">全选</text>
+                </checkbox>
             </checkbox-group>
         </view>
-        <!--总价格-->
+        <!-- 总价格 -->
         <view class="total_price_wrap">
             <view class="total_price">
-                合计：<text class="total_price_text">￥{{allPrice}}</text>
+                合计：
+                <text class="total_price_text">￥{{totalPrice}}</text>
             </view>
             <view class="total_discount">
-                （已优惠<text class="total_discount_text">￥20</text>）
+                （已优惠
+                <text class="total_discount_text">￥20</text>
+                ）
             </view>
         </view>
-        <!--结算-->
-        <view class="order_pay_wrap">
-            结算(2)
-        </view>
+        <!-- 结算 -->
+        <view class="order_pay_wrap">结算({{totalNumber}})</view>
     </view>
 </view>

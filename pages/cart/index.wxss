@@ -20,6 +20,7 @@ page{
 }
 .title{
     width: 100%;
+    height: 80rpx;
     margin-bottom: 24rpx;
     display: flex;
     justify-content: space-between;
@@ -43,14 +44,17 @@ page{
 	color: #a28482;
 }
 .count_{
+    height: 30rpx;
     font-family: FZLanTingHei-L-GBK;
 	font-size: 24rpx;
 	font-weight: normal;
 	font-stretch: normal;
-	line-height: 60rpx;
+	line-height: 26rpx;
 	letter-spacing: 0rpx;
     color: #000000;
     margin-right: 48rpx;
+    display: flex;
+    align-items: center;
 }
 
 .cart_item{
@@ -65,10 +69,16 @@ page{
     height: 168rpx;
     margin-left: 6%;
     display: flex;
+    align-items: center;
 }
-.good_box image{
-    width: 168rpx;
-    height: 168rpx;
+.good_image{
+    width: 148rpx;
+    height: 148rpx;
+    overflow: hidden;
+}
+.good_image image{
+    width: 148rpx;
+    height: 148rpx;
 }
 .good_content{
     width: 61%;
@@ -100,19 +110,22 @@ page{
 }
 .good_price_box{
     width: 100%;
+    height: 44rpx;
     margin-top: 30rpx;
     display: flex;
-    justify-content:space-between;
 }
 .plus_minis{
+    margin-left: auto;
+    margin-right: 32rpx;
     display: flex;
+    align-items: center;
 }
 .number{
     font-family: FZLanTingHei-B-GBK;
 	font-size: 30rpx;
 	font-weight: normal;
 	font-stretch: normal;
-	line-height: 15rpx;
+	line-height: 30rpx;
 	letter-spacing: 0rpx;
 	color: #8d8eab;
 }
@@ -219,8 +232,14 @@ page{
     background-color: #ffffff;
 	border-radius: 24rpx;
 }
+.pop_image{
+    width: 349rpx;
+    height: 349rpx;
+    overflow: hidden;
+}
 .goods_item image{
-    width: 100%;
+    width: 349rpx;
+    height: 349rpx;
     border-radius: 24rpx;
 }
 .goods_name{
@@ -229,10 +248,11 @@ page{
 	font-size: 24rpx;
 	font-weight: normal;
 	font-stretch: normal;
-	line-height: 60rpx;
+	line-height: 26rpx;
     letter-spacing: 0rpx;
     color: #000000;
-    margin-left: 32rpx;
+    margin-left: 16rpx;
+    margin-top: 16rpx;
     overflow : hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -245,10 +265,11 @@ page{
 	font-size: 24rpx;
 	font-weight: normal;
 	font-stretch: normal;
-	line-height: 60rpx;
+	line-height: 26rpx;
 	letter-spacing: 0rpx;
     color: #f7937b;
-    margin-left: 32rpx;
+    margin-left: 16rpx;
+    margin-top: 16rpx;
 }
 
 /*底部工具栏*/

@@ -26,7 +26,7 @@
         <scroll-view scroll-y class="right">
             <view class="good_item" wx:for="{{list}}" wx:key="productId" data-item="{{item}}" data-item="{{item}}" bindtap = "toGoodMsg">
                 <view class="good_img">
-                    <image data-item="{{item}}" bindtap = "toGoodMsg" src="{{imgs[index]}}" mode="aspectFit"></image>
+                    <image data-item="{{item}}" bindtap = "toGoodMsg" src="{{imgUrl+item.productState}}" mode="aspectFit"></image>
                 </view>
                 <view class="good_content">
                     <text data-item="{{item}}" bindtap = "toGoodMsg" class="good_name">{{item.productName}}\n</text>

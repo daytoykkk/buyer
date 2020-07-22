@@ -75,9 +75,8 @@ Page({
       }
     ],
     popList:[],
-    popImgs:[],
     goodList:[],
-    goodImgs:[],
+    imgUrl:"http://111.230.173.74:7001/consumer/showEInvoice/?FileName=",
     currentIndex:0,
     currentTag:"进口食品"
   },
@@ -109,44 +108,6 @@ Page({
         that.setData({
           goodList:res.data.这个标签的货物
         })
-        let len=that.data.goodList.length;
-        for(let i=0;i<len;i++){
-          that.getImgs(that.data.goodList[i].productId)
-        }
-      },
-      fail:function(err){
-        console.log(err)
-      }
-    })
-  },
-  //获取小标签对应的商品图片
-  getImgs(id){
-    let that = this
-    that.data.goodImgs=[]
-    wx.request({ 
-      url: 'http://111.230.173.74:7001/consumer/showProductImage/',
-      method: 'get',    
-      data:{
-        ProductId:id
-      },
-      header: { 
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-       let len=res.data.对应货物的图片.length
-       for(let i=0;i<len;i++){
-         if(res.data.对应货物的图片[i].imageState=="main"){
-           let imgs=that.data.goodImgs;
-           imgs.push( "http://111.230.173.74:7001/consumer/showEInvoice/?FileName=" +
-           res.data.对应货物的图片[i].imageName)
-           that.setData({
-             goodImgs:imgs
-           })
-           break;
-         }else{
-           continue
-         }
-       }
       },
       fail:function(err){
         console.log(err)
@@ -166,47 +127,15 @@ Page({
         'content-type': 'application/json'
       },
       success: function (res) {
-        that.setData({
-          popList:res.data.这个标签的货物
-        })
-       
-        for(let i=0;i<6;i++){
-          that.getPopImg(that.data.popList[i].productId)
+        let list=[]
+        if(res.data.这个标签的货物.length>6){
+          list=res.data.这个标签的货物.slice(0,6)
+        }else{
+          list=res.data.这个标签的货物
         }
-      },
-      fail:function(err){
-        console.log(err)
-      }
-    })
-  },
-  //获取热门对应图片
-  getPopImg(id){
-    let that = this
-    that.data.popImgs=[]
-    wx.request({ 
-      url: 'http://111.230.173.74:7001/consumer/showProductImage/',
-      method: 'get',    
-      data:{
-        ProductId:id
-      },
-      header: { 
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-       let len=res.data.对应货物的图片.length
-       for(let i=0;i<len;i++){
-         if(res.data.对应货物的图片[i].imageState=="main"){
-           let imgs=that.data.popImgs;
-           imgs.push( "http://111.230.173.74:7001/consumer/showEInvoice/?FileName=" +
-           res.data.对应货物的图片[i].imageName)
-           that.setData({
-             popImgs:imgs
-           })
-           break;
-         }else{
-           continue
-         }
-       }
+        that.setData({
+          popList:list
+        })
       },
       fail:function(err){
         console.log(err)
@@ -285,8 +214,6 @@ sendCart(item){
 },
   //生命周期函数--监听页面加载
   onLoad: function (options) {
-    this.getPopGood()
-     this.getMsg()
      this.login()
   },
 
@@ -301,7 +228,8 @@ sendCart(item){
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getPopGood()
+    this.getMsg()
   },
 
   /**

@@ -54,7 +54,7 @@
         </view>
         <view class="pop_goods">
             <view class="pop_item" wx:for="{{popList}}" wx:key="index" data-item="{{item}}">
-                <image src="{{popImgs[index]}}" mode="aspectFill"  data-item="{{item}}" bindtap = "toGoodMsg"></image>
+                <image src="{{imgUrl+item.productState}}" mode="aspectFill"  data-item="{{item}}" bindtap = "toGoodMsg"></image>
                 \n
                 <text class="pop_name">{{item.productName}}\n</text>
                 <view>
@@ -80,7 +80,7 @@
     <view class="goods_box">
         <view class="goods_item" wx:for="{{goodList}}" wx:key="productId" data-item="{{item}}">
             <view style="width:100%;overflow:hidden;">
-                <image data-item="{{item}}" bindtap = "toGoodMsg" src="{{goodImgs[index]}}" style="height:330rpx;width:330rpx;"></image>
+                <image data-item="{{item}}" bindtap = "toGoodMsg" src="{{imgUrl+item.productState}}" style="height:330rpx;width:330rpx;"></image>
             </view>
             <text class="goods_name">{{item.productName}}\n</text>
             <view>
