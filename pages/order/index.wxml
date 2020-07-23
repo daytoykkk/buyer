@@ -1,2 +1,64 @@
-<!--pages/order/index.wxml-->
-<text>pages/order/index.wxml</text>
+<view class="main">
+    <view style="position:relative;border:1px solid #3a4058;border-bottom:1px solid #ffffff;">
+        <view class="bk_box"></view>
+        <view class="bk_box1"></view>
+        <!-- 交易状态 -->
+        <view class="image_box">
+            <image src="../../icons/finish.jpg" mode="aspectFit"></image>
+        </view>
+    </view>
+    <!-- 商品 -->
+    <view class="box">
+        <view class="title_box">
+            <view class="title">自提</view>
+            共{{totalNumber}}件商品
+        </view>
+        <view class="good_item" wx:for="{{old_cart}}" wx:key="productId">
+            <view class="img">
+                <image src="{{imgUrl+item.productState}}"></image>
+            </view>
+            <view class="name">{{item.productName}}</view>
+            <view class="price_number">
+                <view class="price">￥{{item.productPrice}}</view>
+                <view class="number">x {{item.productNumber}}</view>
+            </view>
+        </view>
+    </view>
+    <!-- 买家留言 -->
+    <view class="msg">
+        <view class="msg_title">买家留言</view>
+        <view class="msg_content">哈哈哈哈哈哈哈哈哈哈哈哈哈哈</view>
+    </view>
+    <!-- 商品总额 -->
+    <view class="price_quan">
+        <view class="price_box">
+            <view class="price_quan_title">商品总额</view>
+            <view class="price_quan_content">￥22</view>
+        </view>
+        <view class="quan">
+            <view class="price_quan_title">优惠券</view>
+            <view class="price_quan_content">-￥10</view>
+        </view>
+        <view class="actual">
+            <view class="price_quan_title">实际支付</view>
+            <view class="price_quan_content">￥100</view>
+        </view>
+    </view>
+    <!-- 订单信息 -->
+    <view class="order_box">
+        <view class="order_number">
+            <view class="order_title">订单编号</view>
+            <view class="order_content">525345</view>
+        </view>
+        <view class="order_time">
+            <view class="order_title">自提时间</view>
+            <view class="order_content">525345</view>
+        </view>
+    </view>
+    <!-- 底部工具栏 -->
+    <view class="footer_bool">
+        <view class="delete_btn btn">删除订单</view>
+        <view class="confirm_btn btn">确认收货</view>
+        <view class="cancel_btn btn">取消订单</view>
+    </view>
+</view>

@@ -139,7 +139,7 @@ Page({
             icon: 'success',
             duration: 2000
           })
-          that.onLoad()
+          that.onShow()
         }
       },
       fail: function (err) {
