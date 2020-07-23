@@ -20,7 +20,7 @@ Page({
             }
 
             wx.request({
-              url: "http://111.230.173.74:7008/thread/getOpenid/",
+              url: "https://111.230.173.74:7008/thread/getOpenid/",
               data: {
                 code: res.code
               },

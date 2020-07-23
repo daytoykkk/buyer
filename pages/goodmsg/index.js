@@ -1,9 +1,5 @@
 // pages/goodmsg/index.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
       productname:"",
       msg:{},
@@ -13,7 +9,7 @@ Page({
   getMsg(){
       let that=this;
       wx.request({ 
-        url: 'http://111.230.173.74:7001/consumer/showOneProduct/',
+        url: 'https://111.230.173.74:7001/consumer/showOneProduct/',
         method: 'get',    
         data:{
           ProductName:that.data.productname
@@ -37,7 +33,7 @@ Page({
     let that = this
     that.data.goodImgs=[]
     wx.request({ 
-      url: 'http://111.230.173.74:7001/consumer/showProductImage/',
+      url: 'https://111.230.173.74:7001/consumer/showProductImage/',
       method: 'get',    
       data:{
         ProductId:that.data.msg.productId
@@ -50,14 +46,14 @@ Page({
        for(let i=0;i<len;i++){
          if(res.data.对应货物的图片[i].imageState=="main"){
            let imgs=[];
-           imgs.push("http://111.230.173.74:7001/consumer/showEInvoice/?FileName=" +
+           imgs.push("https://111.230.173.74:7001/consumer/showEInvoice/?FileName=" +
            res.data.对应货物的图片[i].imageName)
            that.setData({
              goodImgs:imgs.concat(that.data.goodImgs)
            })
          }else{
           let imgs=that.data.goodImgs;
-           imgs.push( "http://111.230.173.74:7001/consumer/showEInvoice/?FileName=" +
+           imgs.push( "https://111.230.173.74:7001/consumer/showEInvoice/?FileName=" +
            res.data.对应货物的图片[i].imageName)
            that.setData({
              goodImgs:imgs

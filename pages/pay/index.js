@@ -1,7 +1,7 @@
 // pages/pay/index.js
 Page({
   data: {
-      imgUrl:"http://111.230.173.74:7001/consumer/showEInvoice/?FileName=",
+      imgUrl:"https://111.230.173.74:7001/consumer/showEInvoice/?FileName=",
       msg:"",
       totalPrice:"",
       totalNumber:"",
@@ -54,7 +54,7 @@ Page({
       let date=new Date()
       let id=wx.getStorageSync("openid")
       wx.request({  
-        url: 'http://111.230.173.74:7008/thread/subOrder/',
+        url: 'https://111.230.173.74:7008/thread/subOrder/',
         method: 'get',    
         data:{
           OrderProduct:JSON.stringify(that.data.cart),
