@@ -76,7 +76,7 @@ Page({
     ],
     popList:[],
     goodList:[],
-    imgUrl:"https://111.230.173.74:7001/consumer/showEInvoice/?FileName=",
+    imgUrl:"https://fzulyt.fun:7001/consumer/showEInvoice/?FileName=",
     currentIndex:0,
     currentTag:"进口食品"
   },
@@ -96,7 +96,7 @@ Page({
     let that = this
     that.data.goodList=[]
     wx.request({ 
-      url: 'https://111.230.173.74:7008/thread/getTag/',
+      url: 'https://fzulyt.fun:7008/thread/getTag/',
       method: 'get',    
       data:{
         ProductTag:that.data.currentTag
@@ -118,7 +118,7 @@ Page({
   getPopGood(){
     let that = this
     wx.request({ 
-      url: 'https://111.230.173.74:7008/thread/getTag/',
+      url: 'https://fzulyt.fun:7008/thread/getTag/',
       method: 'get',    
       data:{
         ProductTag:"本周热门"
@@ -162,7 +162,7 @@ Page({
           }
 
           wx.request({
-            url: "https://111.230.173.74:7008/thread/getOpenid/",
+            url: "https://fzulyt.fun:7008/thread/getOpenid/",
             data: {
               code: res.code
             },
@@ -189,7 +189,7 @@ sendCart(item){
     let product=JSON.stringify(item.currentTarget.dataset.item)
  
     wx.request({  
-      url: 'https://111.230.173.74:7008/thread/sendCart/',
+      url: 'https://fzulyt.fun:7008/thread/sendCart/',
       method: 'get',    
       data:{
         Id:JSON.stringify(id),

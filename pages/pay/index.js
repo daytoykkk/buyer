@@ -1,7 +1,7 @@
 // pages/pay/index.js
 Page({
   data: {
-      imgUrl:"https://111.230.173.74:7001/consumer/showEInvoice/?FileName=",
+      imgUrl:"https://fzulyt.fun:7001/consumer/showEInvoice/?FileName=",
       msg:"",
       totalPrice:"",
       totalNumber:"",
@@ -45,21 +45,29 @@ Page({
       totalPrice,
       totalNumber
     })
-    console.log(that.data.cart)
-    console.log(that.data.totalPrice)
   },
   //提交订单
   subOrder(){
       let that=this;
       let date=new Date()
       let id=wx.getStorageSync("openid")
+      let cart=that.data.cart
+      let hhh=""
+      cart.forEach(i => {
+        hhh+=JSON.parse(i.product).productId+"-"+i.number+"-"+JSON.parse(i.product).productPrice+"-"
+      });
+      hhh=hhh.substr(0,hhh.length-1)
+      
       wx.request({  
-        url: 'https://111.230.173.74:7008/thread/subOrder/',
+        url: 'https://fzulyt.fun:7008/thread/subOrder/',
         method: 'get',    
         data:{
           OrderProduct:JSON.stringify(that.data.cart),
           OrderTime:date,
-          Id:JSON.stringify(id)
+          Id:JSON.stringify(id),
+          aq:hhh,
+          totalPrice:that.data.totalPrice,
+          totalNumber:that.data.totalNumber
         },
         header: {  
           'content-type': 'application/json'

@@ -53,6 +53,4 @@
        <view class="add_cart" bindtap = "addCart">加入购物车</view>
        <view class="buy">立即购买</view>
    </view>
-     
-
 </view>

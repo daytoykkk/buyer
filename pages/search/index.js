@@ -3,14 +3,14 @@ Page({
   data: {
       name:"",
       list:[],
-      imgUrl:"https://111.230.173.74:7001/consumer/showEInvoice/?FileName="
+      imgUrl:"https://fzulyt.fun:7001/consumer/showEInvoice/?FileName="
   },
   //返回上一页
   back(){
     wx.navigateBack({
       delta: 1,
       success: function() {
-          console.log('成功！')
+        
       }
     })
   },
@@ -21,7 +21,7 @@ Page({
     })
 
     wx.request({  
-      url: 'https://111.230.173.74:7008/thread/getProduct/',
+      url: 'https://fzulyt.fun:7008/thread/getProduct/',
       method: 'get',    
       data:{
         ProductName:that.data.name
@@ -68,7 +68,7 @@ sendCart(item){
   let product=JSON.stringify(item.currentTarget.dataset.item)
 
   wx.request({  
-    url: 'https://111.230.173.74:7008/thread/sendCart/',
+    url: 'https://fzulyt.fun:7008/thread/sendCart/',
     method: 'get',    
     data:{
       Id:JSON.stringify(id),

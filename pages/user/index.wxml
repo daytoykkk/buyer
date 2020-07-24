@@ -3,7 +3,7 @@
     <view class="person_info">
         <view class="selfmsg_box">
             <view class="tx">
-                <image mode="widthFix" src="{{imgUrl}}" ></image>
+                <image mode="widthFix" src="{{txUrl}}" ></image>
             </view>
             <view class="msg">
                 <text class="msg_name">{{name}}\n</text>
@@ -20,28 +20,31 @@
     </view>
     <!--订单导航-->
     <view class="daohang">
-        <view class="daohang_now .daohang_active"><text style="margin-left:32rpx;">当前订单</text>
-            <view class="daohang_line"></view>
+        <view class="daohang_now {{isAll?'':'.daohang_active'}}" bindtap = "invertisAll"><text style="margin-left:32rpx;">当前订单</text>
+            <view class="daohang_line" hidden="{{isAll}}"></view>
         </view>
-        <view class="daohang_all"><text style="margin-left:242rpx;">全部订单</text>
+        <view class="daohang_all {{isAll?'.daohang_active':''}}" bindtap = "invertisAll"><text style="margin-left:242rpx;">全部订单</text>
+         <view class="daohang_line" hidden="{{!isAll}}"></view>
         </view>
     </view>
     <!--订单们-->
-    <view class="good_item">
+    <view class="good_item" wx:for="{{list}}" wx:key="productId" hidden="{{item.orderState!='no'&&!isAll}}" data-item="{{item.orderId}}" bindtap = "toOrder">
         <view class="msg_box">
              <text class="ziti">自提</text>
-             <text class="date">2020年11月1日</text>
-             <text class="isFinish">已完成</text>
+             <text class="date">{{item.orderTime}}</text>
+             <text class="isFinish" wx:if="{{item.orderState=='yes'}}">已完成</text>
+              <text class="isFinish" wx:elif="{{item.orderState=='no'}}">交易中</text>
+               <text class="isFinish" wx:else>已取消</text>
         </view>
-        <view class="imgs_box">
-            <image src="../../icons/3.png" mode="aspectFit"></image>
-             <image src="../../icons/3.png" mode="aspectFit"></image>
-              <image src="../../icons/3.png" mode="aspectFit"></image>
-              <view class="imgs_more">. . .</view>
-              <view class="good_number">共11件</view>
+        <view class="imgs_box">  
+            <view wx:for-item="img" wx:for="{{item.Img}}" wx:key="temp" style="width:104rpx;height:104rpx;overflow:hidden;margin-left:16rpx;" hidden="{{index>2}}">
+                  <image src="{{imgUrl+img.temp}}" style="width:104rpx;" mode="aspectFill"></image>
+            </view>
+              <view class="imgs_more" hidden="{{item.Img.length<3}}">. . .</view>
+              <view class="good_number">共{{item.num}}件</view>
         </view>
         <view class="price_box">
-            合计：<text class="price">￥120</text>
+            合计：<text class="price">￥{{item.totalPrice}}</text>
         </view>
     </view>
 </view>

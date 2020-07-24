@@ -11,7 +11,7 @@
     <view class="box">
         <view class="title_box">
             <view class="title">自提</view>
-            共{{list.length}}件商品
+            共{{totalNumber}}件商品
         </view>
         <view class="good_item" wx:for="{{list}}" wx:key="productId">
             <view class="img">
@@ -33,7 +33,7 @@
     <view class="price_quan">
         <view class="price_box">
             <view class="price_quan_title">商品总额</view>
-            <view class="price_quan_content">￥22</view>
+            <view class="price_quan_content">￥{{totalPrice}}</view>
         </view>
         <view class="quan">
             <view class="price_quan_title">优惠券</view>
@@ -41,7 +41,7 @@
         </view>
         <view class="actual">
             <view class="price_quan_title">实际支付</view>
-            <view class="price_quan_content">￥100</view>
+            <view class="price_quan_content">￥{{totalPrice}}</view>
         </view>
     </view>
     <!-- 订单信息 -->

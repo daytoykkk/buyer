@@ -42,7 +42,6 @@ page{
     clear: both;
     margin-top: 304rpx;
     width: 100%;
-    
     padding-left: 32rpx;
     padding-bottom: 16rpx;
     background-color: #ffffff;
@@ -79,7 +78,7 @@ page{
 
 /*单件商品*/
 .good_item{
-    width: 92%;
+    width: 94%;
     height: 160rpx;
     background-color: #f8f8f8;
     display: flex;

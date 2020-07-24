@@ -10,7 +10,7 @@
     <!--商品分类-->
     <view class="contanier">
         <!--左侧导航-->
-        <scroll-view scroll-y class="left" >
+        <scroll-view scroll-y class="left" style="height:{{windowHeight}}px">
             <view
             wx:for="{{tags}}"
              wx:key="*this"
@@ -23,7 +23,7 @@
             </view>
         </scroll-view>
         <!--右侧-->
-        <scroll-view scroll-y class="right">
+        <scroll-view scroll-y class="right" style="height: {{windowHeight}}px;">
             <view class="good_item" wx:for="{{list}}" wx:key="productId" data-item="{{item}}" data-item="{{item}}">
                 <view class="good_img">
                     <image data-item="{{item}}" bindtap = "toGoodMsg" src="{{imgUrl+item.productState}}" mode="aspectFit"></image>

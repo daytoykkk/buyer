@@ -5,7 +5,8 @@ Page({
     tag:"本周热门",
     tags:["本周热门","猜你喜欢","肉蛋家禽","熟食冻品","水产海鲜","方便食品","罐头食品","进口食品","地方特产","厨房调料","火锅专区","速冻包点"],
     list:[],
-    imgUrl:"https://111.230.173.74:7001/consumer/showEInvoice/?FileName="
+    imgUrl:"https://fzulyt.fun:7001/consumer/showEInvoice/?FileName=",
+    windowHeight:0
   },
  getGoods(item){
   let {index}=item.currentTarget.dataset
@@ -21,7 +22,7 @@ Page({
    let that=this
    that.data.list=[]
     wx.request({ 
-      url: 'https://111.230.173.74:7008/thread/getTag/',
+      url: 'https://fzulyt.fun:7008/thread/getTag/',
       method: 'get',    
       data:{
         ProductTag:that.data.tag
@@ -52,7 +53,7 @@ sendCart(item){
   let product=JSON.stringify(item.currentTarget.dataset.item)
 
   wx.request({  
-    url: 'https://111.230.173.74:7008/thread/sendCart/',
+    url: 'https://fzulyt.fun:7008/thread/sendCart/',
     method: 'get',    
     data:{
       Id:JSON.stringify(id),
@@ -79,6 +80,15 @@ sendCart(item){
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that=this;
+    wx.getSystemInfo({
+      success: function(res) {
+          that.setData({
+              windowHeight: res.windowHeight-160
+          });
+      }
+  });
+  console.log(that.data.windowHeight)
     this.getMsg()
   }
 })

@@ -3,7 +3,7 @@ Page({
   data: {
     list: [],
     popList: [],
-    imgUrl: "https://111.230.173.74:7001/consumer/showEInvoice/?FileName=",
+    imgUrl: "https://fzulyt.fun:7001/consumer/showEInvoice/?FileName=",
     totalNumber: 0,//选择数量
     totalPrice: 0,//总价格
     allChecked: false,
@@ -36,7 +36,7 @@ Page({
     delete item.x
     let id = wx.getStorageSync("openid")
     wx.request({
-      url: 'https://111.230.173.74:7008/thread/daddCart/',
+      url: 'https://fzulyt.fun:7008/thread/daddCart/',
       method: 'get',
       data: {
         Products: JSON.stringify(item),
@@ -65,7 +65,7 @@ Page({
     let that = this;
     let id = wx.getStorageSync("openid");
     wx.request({
-      url: 'https://111.230.173.74:7008/thread/getCart/',
+      url: 'https://fzulyt.fun:7008/thread/getCart/',
       method: 'get',
       data: {
         Id: JSON.stringify(id)
@@ -76,6 +76,9 @@ Page({
       success: function (res) {
         let lists = res.data.购物车的商品
         if (!lists) {
+          that.setData({
+            list:[]
+          })
           return
         }
         lists.forEach((i) => {
@@ -98,7 +101,7 @@ Page({
   getPop() {
     let that = this
     wx.request({
-      url: 'https://111.230.173.74:7008/thread/getTag/',
+      url: 'https://fzulyt.fun:7008/thread/getTag/',
       method: 'get',
       data: {
         ProductTag: "本周热门"
@@ -123,7 +126,7 @@ Page({
     let product = JSON.stringify(item.currentTarget.dataset.item)
 
     wx.request({
-      url: 'https://111.230.173.74:7008/thread/sendCart/',
+      url: 'https://fzulyt.fun:7008/thread/sendCart/',
       method: 'get',
       data: {
         Id: JSON.stringify(id),
