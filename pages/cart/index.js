@@ -8,7 +8,8 @@ Page({
     totalPrice: 0,//总价格
     allChecked: false,
     list_chosen: [],
-    currentX: 0
+    currentX: 0,
+    number:0
   },
   handleMovableChange(e) {
     this.data.currentX = e.detail.x;

@@ -1,4 +1,4 @@
 <!--pages/login/index.wxml-->
-<button type="primary" plain="{{true}}" open-type="getUserInfo" bindgetuserinfo="getUser">登陆</button>
-<button bindtap = "login">登陆2</button>
+<button type="primary" plain="{{true}}" open-type="getUserInfo" bindgetuserinfo="login">登陆</button>
+
 

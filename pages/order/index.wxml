@@ -4,7 +4,8 @@
         <view class="bk_box1"></view>
         <!-- 交易状态 -->
         <view class="image_box">
-            <image src="../../icons/finish.jpg" mode="aspectFit"></image>
+            <image hidden="{{!orderState}}" src="../../icons/finish.jpg" mode="aspectFit"></image>
+             <image hidden="{{orderState}}" src="../../icons/ing.png" mode="aspectFit"></image>
         </view>
     </view>
     <!-- 商品 -->

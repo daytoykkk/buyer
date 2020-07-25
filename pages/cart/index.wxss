@@ -15,6 +15,7 @@ page{
     width: 96%;
     margin-left: 2%;
     margin-top: -35rpx;
+    padding-bottom: 16rpx;
     background-color: #ffffff;
 	border-radius: 12px;
 }

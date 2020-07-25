@@ -30,6 +30,9 @@ Page({
               method: "get",
               success: function (e) {
                 wx.setStorageSync("openid", e.data.openid)
+                wx.switchTab({
+                  url: '/pages/index/index'
+                });
               }
             })
           }

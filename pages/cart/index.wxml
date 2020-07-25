@@ -15,7 +15,11 @@
         </view>
         <!-- 商品 -->
        <block wx:if="{{list.length==0}}">
-           还没有添加任务宝贝噢，快去主页看看吧!
+       <image src="../../icons/empty.png" style="width:100%;" mode="aspectFit">
+       </image>
+           <view style="width:100%;text-align:center;">
+               还没有添加任务宝贝噢，快去主页看看吧!
+           </view>
        </block>
        <block wx:else>
             <view class="cart_item" wx:for="{{list}}" wx:key="productId">

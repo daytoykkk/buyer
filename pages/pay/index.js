@@ -51,23 +51,27 @@ Page({
       let that=this;
       let date=new Date()
       let id=wx.getStorageSync("openid")
+      let userInfo=JSON.parse(wx.getStorageSync("userInfo").rawData)
       let cart=that.data.cart
       let hhh=""
       cart.forEach(i => {
         hhh+=JSON.parse(i.product).productId+"-"+i.number+"-"+JSON.parse(i.product).productPrice+"-"
       });
       hhh=hhh.substr(0,hhh.length-1)
-      
+     
       wx.request({  
         url: 'https://fzulyt.fun:7008/thread/subOrder/',
         method: 'get',    
         data:{
           OrderProduct:JSON.stringify(that.data.cart),
-          OrderTime:date,
+          OrderTime:date,   //自提时间
           Id:JSON.stringify(id),
           aq:hhh,
           totalPrice:that.data.totalPrice,
-          totalNumber:that.data.totalNumber
+          totalNumber:that.data.totalNumber,
+          face:userInfo.avatarUrl,
+          name:userInfo.nickName,
+          time:date   //订单时间
         },
         header: {  
           'content-type': 'application/json'
