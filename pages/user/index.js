@@ -9,6 +9,13 @@ Page({
     list: []
   },
   getMsg() {
+    let id=wx.getStorageSync("openid")
+    if(!id){
+      wx.navigateTo({
+        url: '/pages/login/index'
+      })
+      return
+    }
     let msg = JSON.parse(wx.getStorageSync('userInfo').rawData);
     this.setData({
       name: msg.nickName,

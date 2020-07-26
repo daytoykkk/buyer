@@ -50,6 +50,12 @@ Page({
   sendCart(item) {
     let that = this;
     let id = wx.getStorageSync("openid");
+    if(!id){
+      wx.navigateTo({
+        url: '/pages/login/index'
+      })
+      return
+    }
     let product = JSON.stringify(item.currentTarget.dataset.item)
 
     wx.request({

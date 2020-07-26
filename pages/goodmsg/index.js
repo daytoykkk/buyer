@@ -74,12 +74,39 @@ Page({
   },
   //加入购物车
   addCart(){
-     if( wx.getStorageSynv("userInfo")== null){
-       wx.navigateTo({
-          url: "/pages/login/index"
-     })
-     return;
+    let that = this;
+    let id = wx.getStorageSync("openid");
+    let product = JSON.stringify(that.data.msg)
+    if(!id){
+      wx.navigateTo({
+        url: '/pages/login/index'
+      })
+      return
     }
+    wx.request({
+      url: 'https://fzulyt.fun:7008/thread/sendCart/',
+      method: 'get',
+      data: {
+        Id: JSON.stringify(id),
+        Products: JSON.stringify(product)
+      },
+      header: {
+        'Content-Type': 'application/json'
+      },
+      success: function (res) {
+        if (res.data == "OK") {
+          wx.showToast({
+            title: "成功加入购物车",
+            icon: 'success',
+            duration: 2000
+          })
+          that.onShow()
+        }
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载

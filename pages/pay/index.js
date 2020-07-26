@@ -79,6 +79,26 @@ Page({
         success: function (res) {
          if(res.data.这个订单的订单号){
            wx.setStorageSync("orderId", res.data.这个订单的订单号);
+           let data={
+            OrderProduct:JSON.stringify(that.data.cart),
+            OrderTime:date,   //自提时间
+            Id:JSON.stringify(id),
+            aq:hhh,
+            totalPrice:that.data.totalPrice,
+            totalNumber:that.data.totalNumber,
+            face:userInfo.avatarUrl,
+            name:userInfo.nickName,
+            time:date   //订单时间
+           }
+           that.data.ws.send({
+             data:JSON.stringify(data),
+             success:(e)=>{
+               console.log(e)
+             },
+             fail:(e)=>{
+               console.log(e)
+             }
+           })
           wx.showToast({
             title: '提交订单成功',
             icon: 'success',
@@ -97,13 +117,43 @@ Page({
         }
       })
   },
+  initWebSocket: function() {
+    let _this = this;
+    let ws = wx.connectSocket({
+      url: 'wss://fzulyt.fun:7007/websocket/1/1',
+      header:{
+        'content-type': 'application/json',
+      },
+      timeout:5000,//超时时间，单位为毫秒
+      success:(e)=>{//接口调用成功的回调函数
+        console.log(e)
+      },
+      fail:(e)=>{//接口调用失败的回调函数
+        console.log(e)
+      },
+      complete:(e)=>{//接口调用结束的回调函数（调用成功、失败都会执行）
+        console.log(e)
+      }
+      })
+      _this.setData({
+        ws
+      })
+    ws.onError((e) =>{
+      console.log(e)
+    })
+    
+    ws.onMessage = function(e) {
+     console.log("on:"+"e")
+    };
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
   onShow:function(){
     this.getMsg()
+    this.initWebSocket()
   }
 })

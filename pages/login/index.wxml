@@ -1,4 +1,9 @@
 <!--pages/login/index.wxml-->
-<button type="primary" plain="{{true}}" open-type="getUserInfo" bindgetuserinfo="login">登陆</button>
+<view>
+    <view style="display:flex;justify-content:center;">
+        <image src="../../icons/login.png" mode="aspectFit"></image>
+    </view>
+</view>
+<button class="btn" open-type="getUserInfo" bindgetuserinfo="login">微信一键登陆</button>
 
 

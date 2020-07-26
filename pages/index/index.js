@@ -149,43 +149,16 @@ Page({
       url: '/pages/goodmsg/index?productname='+name
     });
  },
- //登陆
- login() {
-  wx.login({
-    success: res => {
-      wx.getUserInfo({
-        success: user => {
-          wx.setStorageSync("userInfo", user);
-
-          if (this.userInfoReadyCallback) {
-            this.userInfoReadyCallback(user)
-          }
-
-          wx.request({
-            url: "https://fzulyt.fun:7008/thread/getOpenid/",
-            data: {
-              code: res.code
-            },
-            header: {
-              "content-type": "application/json"
-            },
-            method: "get",
-            success: function (e) {
-              wx.setStorageSync("openid", e.data.openid)
-            }
-          })
-        },
-        fail:error=>{
-          console.log(error)
-        }
-      })
-    }
-  })
-},
 //加入购物车
 sendCart(item){
     let that=this;
     let id=wx.getStorageSync("openid");
+    if(!id){
+      wx.navigateTo({
+        url: '/pages/login/index'
+      })
+      return
+    }
     let product=JSON.stringify(item.currentTarget.dataset.item)
  
     wx.request({  

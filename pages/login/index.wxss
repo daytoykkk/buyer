@@ -1,1 +1,18 @@
 /* pages/login/index.wxss */
+.btn{
+    margin-top: 32rpx;
+    width: 72% !important;
+	height: 44px;
+    background-color: #06ad56;
+    border-radius: 22px;
+    font-family: FZLanTingHei-R-GBK;
+	font-size: 15px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 16px;
+	letter-spacing: 0px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

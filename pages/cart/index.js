@@ -65,6 +65,12 @@ Page({
   getMsg() {
     let that = this;
     let id = wx.getStorageSync("openid");
+    if(!id){
+      wx.navigateTo({
+        url: '/pages/login/index'
+      })
+      return
+    }
     wx.request({
       url: 'https://fzulyt.fun:7008/thread/getCart/',
       method: 'get',
