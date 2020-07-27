@@ -3,6 +3,7 @@
     <view class="ziti">
         请确定自提时间
         <view class="choose_btn">></view>
+        
     </view>
     <!--商品-->
     <view class="box">

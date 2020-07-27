@@ -2,7 +2,7 @@
 Page({
   data: {
     currentIndex: 0,
-    tag: "本周热门",
+    tag: "",
     tags: ["本周热门", "猜你喜欢", "肉蛋家禽", "熟食冻品", "水产海鲜", "方便食品", "罐头食品", "进口食品", "地方特产", "厨房调料", "火锅专区", "速冻包点"],
     list: [],
     imgUrl: "https://fzulyt.fun:7001/consumer/showEInvoice/?FileName=",
@@ -20,6 +20,7 @@ Page({
   },
   getMsg() {
     let that = this
+    
     that.data.list = []
     wx.request({
       url: 'https://fzulyt.fun:7008/thread/getTag/',
@@ -94,7 +95,13 @@ Page({
         });
       }
     });
-    console.log(that.data.windowHeight)
+    this.setData({
+      tag:wx.getStorageSync("tag") ? wx.getStorageSync("tag") : "本周热门"
+    })
+    let cindex=that.data.tags.findIndex((value)=>value==that.data.tag)
+  this.setData({
+    currentIndex:cindex
+  })
     this.getMsg()
   }
 })

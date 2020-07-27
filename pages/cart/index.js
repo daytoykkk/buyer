@@ -31,6 +31,7 @@ Page({
      }*/
   },
   handleDel(e) {
+    let that=this
     let { item } = e.currentTarget.dataset
     delete item.checked
     delete item.productNumber

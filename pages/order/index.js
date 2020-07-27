@@ -71,15 +71,31 @@ Page({
       }
     })
   },
+  newTime(){
+    let y = date.getFullYear();  
+    let m = date.getMonth() + 1;  
+    m = m < 10 ? ('0' + m) : m;  
+    let d = date.getDate();  
+    d = d < 10 ? ('0' + d) : d;  
+    let h = date.getHours();  
+    h=h < 10 ? ('0' + h) : h;  
+    let minute = date.getMinutes();  
+    minute = minute < 10 ? ('0' + minute) : minute;  
+    let second=date.getSeconds();  
+    second=second < 10 ? ('0' + second) : second;  
+    return y + '-' + m + '-' + d+' '+h+':'+minute+':'+second;  
+  },
   //确认收货
   confirmOrder() {
     let that=this;
     let orderId=wx.getStorageSync("orderId")
+    let time=that.newTime()
     wx.request({  
       url: 'https://fzulyt.fun:7008/thread/achieveOrder/',
       method: 'get',    
       data:{
-        OrderId:orderId
+        OrderId:orderId,
+        time:time
       },
       header: {  
         'content-type': 'application/json'
@@ -105,12 +121,14 @@ Page({
   cancelOrder() {
     let that=this
     let orderId=wx.getStorageSync("orderId")
+    let time=that.newTime()
     wx.request({  
       url: 'https://fzulyt.fun:7008/thread/concelOrder/',
       method: 'get',    
       data:{
         OrderId:orderId,
-        aq:that.data.aq
+        aq:that.data.aq,
+        time:time
       },
       header: {  
         'content-type': 'application/json'

@@ -46,10 +46,25 @@ Page({
       totalNumber
     })
   },
+  //生成时间
+  newTime(){
+    let y = date.getFullYear();  
+    let m = date.getMonth() + 1;  
+    m = m < 10 ? ('0' + m) : m;  
+    let d = date.getDate();  
+    d = d < 10 ? ('0' + d) : d;  
+    let h = date.getHours();  
+    h=h < 10 ? ('0' + h) : h;  
+    let minute = date.getMinutes();  
+    minute = minute < 10 ? ('0' + minute) : minute;  
+    let second=date.getSeconds();  
+    second=second < 10 ? ('0' + second) : second;  
+    return y + '-' + m + '-' + d+' '+h+':'+minute+':'+second;  
+  },
   //提交订单
   subOrder(){
       let that=this;
-      let date=new Date()
+      let date=that.newTime()
       let id=wx.getStorageSync("openid")
       let userInfo=JSON.parse(wx.getStorageSync("userInfo").rawData)
       let cart=that.data.cart
@@ -118,9 +133,10 @@ Page({
       })
   },
   initWebSocket: function() {
-    let _this = this;
+    let _this = this;id
+    let id=wx.getStorageSync("openid")
     let ws = wx.connectSocket({
-      url: 'wss://fzulyt.fun:7007/websocket/1/1',
+      url: 'wss://fzulyt.fun:7007/websocket/1/'+id,
       header:{
         'content-type': 'application/json',
       },
@@ -153,7 +169,7 @@ Page({
     
   },
   onShow:function(){
-    this.getMsg()
-    this.initWebSocket()
+    //this.getMsg()
+    //this.initWebSocket()
   }
 })

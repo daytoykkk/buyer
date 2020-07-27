@@ -17,7 +17,7 @@
     </view>
     <!-- 分类导航 -->
     <view class="category_box">
-        <view class="category_item" wx:for="{{cates}}" wx:key="name">
+        <view class="category_item" wx:for="{{cates}}" wx:key="name" data-item="{{item.name}}" bindtap = "toCategory">
             <view style="width:100%">
                 <image src="{{item.imgUrl}}"></image>
             </view>
