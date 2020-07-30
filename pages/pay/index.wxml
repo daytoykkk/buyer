@@ -1,11 +1,15 @@
 <view>
-    <!--自提时间-->
+    <!-- 自提时间 -->
     <view class="ziti">
         请确定自提时间
-        <view class="choose_btn">></view>
-        
+       
+        <view class="choose_btn">
+          <picker wx-else class='time-picker' mode="multiSelector" bindchange="bindStartMultiPickerChange" bindtap='pickerTap' bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+           {{startDate}}
+        </picker>
+         </view>
     </view>
-    <!--商品-->
+    <!-- 商品 -->
     <view class="box">
         <view class="title_box">
             <view class="title">自提</view>
@@ -22,7 +26,7 @@
             </view>
         </view>
     </view>
-    <!--优惠券和买家留言-->
+    <!-- 优惠券和买家留言 -->
     <view class="quan_msg">
         <view class="quan">
             <view class="quan_title">优惠券</view>
@@ -36,7 +40,7 @@
             </view>
         </view>
     </view>
-    <!--优惠和商品总额-->
+    <!-- 优惠和商品总额 -->
     <view class="allprice_quan">
         <view class="all_quan">
             <view class="all_quan_title">优惠券</view>
@@ -47,10 +51,10 @@
             <view class="all_price_number">￥{{totalPrice}}</view>
         </view>
     </view>
-    <!--底部工具栏-->
+    <!-- 底部工具栏 -->
     <view class="footer_tool">
         <view class="footer_title">合计：</view>
         <view class="footer_price">￥{{totalPrice}}</view>
-        <view class="submit" bindtap = "subOrder">提交订单</view>
+        <view class="submit" bindtap="subOrder">提交订单</view>
     </view>
 </view>

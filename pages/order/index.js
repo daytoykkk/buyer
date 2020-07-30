@@ -72,6 +72,7 @@ Page({
     })
   },
   newTime(){
+    let date=new Date()
     let y = date.getFullYear();  
     let m = date.getMonth() + 1;  
     m = m < 10 ? ('0' + m) : m;  
