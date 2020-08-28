@@ -1,9 +1,9 @@
 <view class="main">
-    <!--个人信息-->
+    <!-- 个人信息 -->
     <view class="person_info">
         <view class="selfmsg_box">
             <view class="tx">
-                <image mode="widthFix" src="{{txUrl}}" ></image>
+                <image mode="widthFix" src="{{txUrl}}"></image>
             </view>
             <view class="msg">
                 <text class="msg_name">{{name}}\n</text>
@@ -11,40 +11,53 @@
             </view>
         </view>
     </view>
-    <!--优惠券-->
+    <!-- 优惠券 -->
     <view class="quan_box">
-         <view class="quan">
+        <view class="quan">
             <image src="../../icons/quan_icon.png" style="height:36rpx;width:42rpx; margin-top: 50rpx;" mode="aspectFit"></image>
-            <text class="quan_text">我的优惠券 ></text>    
+            <text class="quan_text">我的优惠券 ></text>
         </view>
     </view>
-    <!--订单导航-->
-    <view class="daohang">
+    <!-- 订单导航 -->
+    <!-- <view class="daohang">
         <view class="daohang_now {{isAll?'':'.daohang_active'}}" bindtap = "invertisAll"><text style="margin-left:32rpx;">当前订单</text>
             <view class="daohang_line" hidden="{{isAll}}"></view>
         </view>
         <view class="daohang_all {{isAll?'.daohang_active':''}}" bindtap = "invertisAll"><text style="margin-left:242rpx;">全部订单</text>
          <view class="daohang_line" hidden="{{!isAll}}"></view>
         </view>
-    </view>
-    <!--订单们-->
-    <view class="good_item" wx:for="{{list}}" wx:key="productId" hidden="{{item.orderState!='no'&&!isAll}}" data-item="{{item.orderId}}" bindtap = "toOrder">
-        <view class="msg_box">
-             <text class="ziti">自提</text>
-             <text class="date">{{item.orderTime}}</text>
-             <text class="isFinish" wx:if="{{item.orderState=='yes'}}">已完成</text>
-              <text class="isFinish" wx:elif="{{item.orderState=='no'}}">交易中</text>
-               <text class="isFinish" wx:else>已取消</text>
+    </view> -->
+    <view class="list_box">
+        <view class="list_msg" bindtap = "bindShowMsg">
+            <view class="zhuangtai">{{zhuangtai}}</view>
+            <view style="margin-left:30rpx;">﹀</view>
         </view>
-        <view class="imgs_box">  
+        <view class="select_box" wx:if="{{select}}">
+            <view class="select_one" bindtap = "invertisAll" data-name="当前订单">当前订单</view>
+            <view class="select_one" bindtap = "invertisAll" data-name="全部订单">全部订单</view>
+        </view>
+    </view>
+    <view class="fenge"></view>
+    <!-- 订单们 -->
+    <view class="good_item" wx:for="{{list}}" wx:key="productId" hidden="{{item.orderState!='no'&&!isAll}}" data-item="{{item.orderId}}" bindtap="toOrder">
+        <view class="msg_box">
+            <text class="ziti">自提</text>
+            <text class="date">{{item.orderTime}}</text>
+            <text class="isFinish" wx:if="{{item.orderState=='yes'}}">已完成</text>
+            <text class="isFinish" wx:elif="{{item.orderState=='no'}}">交易中</text>
+            <text class="isFinish" wx:else>已取消</text>
+        </view>
+        <view class="imgs_box">
             <view wx:for-item="img" wx:for="{{item.Img}}" wx:key="temp" style="width:104rpx;height:104rpx;overflow:hidden;margin-left:16rpx;" hidden="{{index>2}}">
-                  <image src="{{imgUrl+img.temp}}" style="width:104rpx;" mode="aspectFill"></image>
+                <image src="{{imgUrl+img.temp}}" style="width:104rpx;" mode="aspectFill"></image>
             </view>
-              <view class="imgs_more" hidden="{{item.Img.length<3}}">. . .</view>
-              <view class="good_number">共{{item.num}}件</view>
+            <view class="imgs_more" hidden="{{item.Img.length<3}}">. . .</view>
+            <view class="good_number">共{{item.num}}件</view>
         </view>
         <view class="price_box">
-            合计：<text class="price">￥{{item.totalPrice}}</text>
+            <view style="font-size:24rpx;line-height: 64rpx;">合计：</view>
+            <text class="price">￥{{item.totalPrice}}</text>
         </view>
+        <view class="fenge"></view>
     </view>
 </view>

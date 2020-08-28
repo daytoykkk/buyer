@@ -64,8 +64,7 @@ page{
     word-break: break-all;
 }
 .price_view{
-    margin-top: 30rpx;
-    margin-left: 32rpx;
+    
     font-family: FZLanTingHei-B-GBK;
 	font-size: 44rpx;
 	font-weight: normal;
@@ -84,6 +83,24 @@ page{
 	line-height: 28rpx;
 	letter-spacing: 0rpx;
 	color: #929090;
+}
+.price_seven{
+    margin-left: 32rpx;
+    margin-top: 30rpx;
+    width: 100%;
+    display: flex;
+}
+.seven{
+    width: 186rpx;
+    height: 52rpx;
+    margin-left: 40rpx;
+	font-family: FZLanTingHei-R-GBK;
+	font-size: 24rpx;
+	font-weight: normal;
+    font-stretch: normal;
+    line-height: 52rpx;
+	letter-spacing: 0rpx;
+	color: #8d8eab
 }
 
 /*优惠券*/
@@ -119,25 +136,7 @@ page{
 	color: #8d8eab;
 }
 
-/*七天无理由*/
-.tuihuo{
-    margin-top: 8rpx;
-    margin-left: 2%;
-    width: 96%;
-	height: 33px;
-	background-color: #ffffff;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: FZLanTingHei-R-GBK;
-	font-size: 12px;
-	font-weight: normal;
-	font-stretch: normal;
-	line-height: 14px;
-	letter-spacing: 0px;
-	color: #8d8eab;
-}
+
 
 /*商品详情分割*/
 .separation{

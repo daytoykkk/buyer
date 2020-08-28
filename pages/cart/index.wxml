@@ -85,7 +85,7 @@
                 <view class="goods_price" data-item="{{item}}" bindtap="toGoodMsg">
                     ￥{{item.productPrice}}
                 </view>
-                <text data-item="{{item}}" bindtap="sendCart" style="margin-left:auto;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+                <text data-item="{{item}}" bindtap="sendCart" style="margin-left:auto;font-size:44rpx;margin-right:30rpx;" class="iconfont .icon-gouwuche"></text>
             </view>
         </view>
     </view>

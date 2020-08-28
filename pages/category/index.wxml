@@ -1,14 +1,17 @@
 <!--pages/category/index.wxml-->
 <view class="main">
+    <!--上部分-->
+    <view id="top_box">
     <!--搜索框-->
     <SearchInput></SearchInput>
     <!--广告图-->
     <view class="poor_bk"></view>
     <view class="gk_img_box">
-        <image src="../../icons/11.png" mode="widthFix"></image>
+        <image src="../../icons/11.png" mode="aspectFill"></image>
+    </view>
     </view>
     <!--商品分类-->
-    <view class="contanier">
+    <view class="contanier" style="height:{{windowHeight}}px;">
         <!--左侧导航-->
         <scroll-view scroll-y class="left" style="height:{{windowHeight}}px">
             <view
@@ -33,7 +36,7 @@
                     <text data-item="{{item}}" bindtap = "toGoodMsg" class="good_xianzhi">限购10件</text>
                     <view>
                 <text data-item="{{item}}" bindtap = "toGoodMsg" class="good_price">￥{{item.productPrice}}</text>
-                <text data-item="{{item}}" bindtap = "sendCart" style="clear:both;float:right;font-size:44rpx;margin-right:32rpx;" class="iconfont .icon-gouwuchelandi-041"></text>
+                <text data-item="{{item}}" bindtap = "sendCart" style="clear:both;float:right;font-size:44rpx;margin-right:32rpx;" class="iconfont .icon-gouwuche"></text>
             </view>
                 </view>
             </view>

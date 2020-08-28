@@ -11,7 +11,10 @@
     <!-- 标题价格 -->
     <view class="title_box">
         <view class="title_view">{{msg.productName}}</view>
+       <view class="price_seven">
         <view class="price_view">￥{{msg.productPrice}}</view>
+        <view class="seven" hidden="{{!msg.productChange}}">7天无理由退换货</view>
+       </view>
         <view class="sales_view">已售10{{msg.productUnit}}</view>
     </view>
     <!-- 优惠券 -->
@@ -19,8 +22,6 @@
         <view class="discount_title">领券</view>
         <view class="discount_number">可领一张 ></view>
     </view>
-    <!-- 七天无理由 -->
-    <view class="tuihuo" hidden="{{!msg.productChange}}">7天无理由退换货</view>
     <!-- 商品详情分割线 -->
     <view class="separation">
         <view class="separation_text">商品详情</view>

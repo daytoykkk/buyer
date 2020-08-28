@@ -30,7 +30,7 @@ page{
 /*商品分类*/
 .contanier{
     display: flex;
-    height: 850rpx;
+    margin-top: 16rpx;
 }
 .left{
     width: 24%;

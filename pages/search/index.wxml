@@ -18,7 +18,7 @@
             <view class="name" data-item="{{item}}"  bindtap = "toGoodMsg">{{item.productName}}</view>
             <view class="price_cart">
                 <view class="price" data-item="{{item}}"  bindtap = "toGoodMsg">￥{{item.productPrice}}</view>
-                <text data-item="{{item}}" bindtap = "sendCart"  style="margin-left:auto;font-size:44rpx;margin-right:0;" class="iconfont .icon-gouwuchelandi-041"></text>
+                <text data-item="{{item}}" bindtap = "sendCart"  style="margin-left:auto;font-size:44rpx;margin-right:0;" class="iconfont .icon-gouwuche"></text>
             </view>
         </view>
     </view>

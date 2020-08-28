@@ -1,6 +1,6 @@
 <!--pages/login/index.wxml-->
 <view>
-    <view style="display:flex;justify-content:center;">
+    <view style="display:flex;justify-content:center;margin-top:200rpx">
         <image src="../../icons/login.png" mode="aspectFit"></image>
     </view>
 </view>

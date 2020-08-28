@@ -6,7 +6,9 @@ Page({
     txUrl: "",
     imgUrl: "https://fzulyt.fun:7001/consumer/showEInvoice/?FileName=",
     isAll: false,//true时显示全部订单
-    list: []
+    list: [],
+    zhuangtai:"当前订单",
+    select:false
   },
   getMsg() {
     let id=wx.getStorageSync("openid")
@@ -40,10 +42,7 @@ Page({
         if (!list) {
           return
         }
-        list.forEach(i => {
-          let date = i.orderTime.slice(1, 5) + "年" + i.orderTime.slice(6, 8) + "月" + i.orderTime.slice(9, 11) + "日"
-          i.orderTime = date
-        });
+        
        that.getOrderProduct(list)
      
       },
@@ -53,10 +52,13 @@ Page({
     })
   },
   //切换全部订单和现在当前订单
-  invertisAll() {
+  invertisAll(e) {
     let that = this;
+    let name=e.currentTarget.dataset.name
     this.setData({
-      isAll: !that.data.isAll
+      isAll: !that.data.isAll,
+      select:false,
+      zhuangtai:name
     })
   },
   //获取每个订单的信息
@@ -108,6 +110,11 @@ Page({
       wx.navigateTo({
         url: '/pages/order/index'
       });
+  },
+  bindShowMsg(){
+    this.setData({
+      select:!this.data.select
+    })
   },
   onShow: function () {
     this.getMsg()
