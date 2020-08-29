@@ -86,6 +86,36 @@ Page({
     second=second < 10 ? ('0' + second) : second;  
     return y + '-' + m + '-' + d+' '+h+':'+minute+':'+second;  
   },
+  initWebSocket: function () {
+    let _this = this; 
+    let id = wx.getStorageSync("openid")
+    let ws = wx.connectSocket({
+      url: 'wss://fzulyt.fun:7007/websocket/1/' + id,
+      header: {
+        'content-type': 'application/json',
+      },
+      timeout: 5000,//超时时间，单位为毫秒
+      success: (e) => {//接口调用成功的回调函数
+        console.log(e)
+      },
+      fail: (e) => {//接口调用失败的回调函数
+        console.log(e)
+      },
+      complete: (e) => {//接口调用结束的回调函数（调用成功、失败都会执行）
+        console.log(e)
+      }
+    })
+    _this.setData({
+      ws
+    })
+    ws.onError((e) => {
+      console.log(e)
+    })
+
+    ws.onMessage = function (e) {
+      console.log("on:" + "e")
+    };
+  },
   //确认收货
   confirmOrder() {
     let that=this;
@@ -108,6 +138,23 @@ Page({
             icon: 'success',
             duration: 1500,
             success: (result)=>{
+             let _data=that.data.msg;
+                let id=_data.id;
+                id=id.substr(1)
+                id=id.substr(0,id.length-1)
+              _data.orderState="yes"
+              _data.see="no"
+             _data.id=id
+              that.data.ws.send({
+                data: JSON.stringify(_data),
+                success: (e) => {
+                  console.log(e)
+                },
+                fail: (e) => {
+                  console.log(e)
+                }
+              })
+
               that.onShow()
             }
           });
@@ -136,6 +183,24 @@ Page({
       },
       success: function (res) {
         if(res.data="OK"){
+          let _data=that.data.msg;
+          let id=_data.id;
+          id=id.substr(1)
+          id=id.substr(0,id.length-1)
+        _data.orderState="concel"
+        _data.see="no"
+       _data.id=id
+        _data.time=time
+          that.data.ws.send({
+            data: JSON.stringify(_data),
+            success: (e) => {
+              console.log(e)
+            },
+            fail: (e) => {
+              console.log(e)
+            }
+          })
+
           wx.showToast({
             title: '取消成功',
             icon: 'success',
@@ -158,6 +223,7 @@ Page({
   },
   onShow: function () {
     this.getMsg()
+    this.initWebSocket()
   },
   onUnload:function(){
     wx.reLaunch({

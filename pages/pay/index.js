@@ -344,15 +344,16 @@ Page({
         if (res.data.这个订单的订单号) {
           wx.setStorageSync("orderId", res.data.这个订单的订单号);
           let data = {
-            OrderProduct: JSON.stringify(that.data.cart),
-            OrderTime: date,   //自提时间
-            Id: JSON.stringify(id),
+            orderTime: that.data.startDate,   //自提时间
+            Id: id,
             aq: hhh,
-            totalPrice: that.data.totalPrice,
-            totalNumber: that.data.totalNumber,
+            totalPrice: JSON.stringify(that.data.totalPrice),
+            totalNumber:JSON.stringify(that.data.totalNumber),
             face: userInfo.avatarUrl,
             name: userInfo.nickName,
-            time: date   //订单时间
+            time: date ,  //订单时间
+            orderState:"no",
+            orderId:res.data.这个订单的订单号
           }
           that.data.ws.send({
             data: JSON.stringify(data),
@@ -382,7 +383,7 @@ Page({
     })
   },
   initWebSocket: function () {
-    let _this = this; id
+    let _this = this; 
     let id = wx.getStorageSync("openid")
     let ws = wx.connectSocket({
       url: 'wss://fzulyt.fun:7007/websocket/1/' + id,

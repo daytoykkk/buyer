@@ -42,7 +42,7 @@ Page({
         if (!list) {
           return
         }
-        
+        list.reverse()
        that.getOrderProduct(list)
      
       },
