@@ -12,12 +12,12 @@
         </view>
     </view>
     <!-- 优惠券 -->
-    <view class="quan_box">
+  
         <view class="quan">
-            <image src="../../icons/quan_icon.png" style="height:36rpx;width:42rpx; margin-top: 50rpx;" mode="aspectFit"></image>
+            <image src="../../icons/quan_icon.png" style="height:36rpx;width:42rpx;" mode="aspectFit"></image>
             <text class="quan_text">我的优惠券 ></text>
         </view>
-    </view>
+
     <!-- 订单导航 -->
     <!-- <view class="daohang">
         <view class="daohang_now {{isAll?'':'.daohang_active'}}" bindtap = "invertisAll"><text style="margin-left:32rpx;">当前订单</text>

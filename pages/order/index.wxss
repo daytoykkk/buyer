@@ -72,7 +72,7 @@ page{
 	font-stretch: normal;
 	line-height: 34rpx;
 	letter-spacing: 0rpx;
-    color: #a28482;
+    color: hsl(4, 28%, 43%);
     margin-right: 32rpx;
 }
 

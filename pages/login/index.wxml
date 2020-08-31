@@ -1,7 +1,7 @@
 <!--pages/login/index.wxml-->
 <view>
     <view style="display:flex;justify-content:center;margin-top:200rpx">
-        <image src="../../icons/login.png" mode="aspectFit"></image>
+        <image src="../../icons/login.png" mode="aspectFit" style="width:392rpx;height:392rpx;"></image>
     </view>
 </view>
 <button class="btn" open-type="getUserInfo" bindgetuserinfo="login">微信一键登陆</button>

@@ -1,20 +1,8 @@
 .person_info {
     width: 100%;
-    height: 250rpx;
+    height: 180rpx;
     padding-top: 20rpx;
     background-image: linear-gradient(180deg, #3a4058 0%, #3a4058 100%);
-    position: relative;
-}
-.person_info:after {
-      background-color: #3a4058;
-      content: '';
-      width: 116%;
-      height: 380rpx;
-      position: absolute;
-      left: -8%;
-      top:0;
-      z-index: -1;
-      border-radius: 0 0 80% 80%;
 }
 .selfmsg_box{
     width: 92%;
@@ -69,30 +57,18 @@
     overflow:hidden; 
 }
 .quan{
-    clear: both;
-    width: 100%;
-    height: 150rpx;
+    width: 94%;
+    margin-left: 3%;
+    margin-top: 24rpx;
+    height: 110rpx;
     background-image: linear-gradient(180deg, #8d8eab 0%, #8d8eab 100%);
-    position: relative;
+    box-shadow: 0rpx 8rpx 4rpx hsla(0, 3%, 87%, 0.902);
+    border-radius: 12rpx;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.quan::after{
-    background-color: #8d8eab;
-    content: '';
-    width: 116%;
-    height: 206rpx;
-    position: absolute;
-    left: -8%;
-    top:0;
-    z-index: -1;
-    border-radius: 0 0 80% 80%;
-    box-shadow: 0rpx 6rpx 12rpx 0rpx 
-		rgba(0, 0, 0, 0.16);
-}
 .quan_text{
-    margin-top: 50rpx;
     margin-left: 16rpx;
     font-family: FZLanTingHei-R-GBK;
 	font-size: 30rpx;
@@ -204,7 +180,7 @@
 	font-stretch: normal;
 	line-height: 34rpx;
 	letter-spacing: 0rpx;
-	color: #a28482;
+	color: hsl(4, 28%, 43%);
 }
 .date{
     margin-left: 32rpx;
