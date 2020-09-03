@@ -7,7 +7,14 @@
     <!--广告图-->
     <view class="poor_bk"></view>
     <view class="gk_img_box">
-        <image src="../../icons/11.png" mode="aspectFill"></image>
+         <swiper class="swiper_box" autoplay indicator-dots="true" circular interval="3000">
+            <swiper-item class="swiper_item">
+                <image mode="widthFix" src="../../icons/31.jpg"></image>
+            </swiper-item>
+            <swiper-item class="swiper_item">
+                <image mode="widthFix" src="../../icons/32.jpg"></image>
+            </swiper-item>
+        </swiper>
     </view>
     </view>
     <!--商品分类-->

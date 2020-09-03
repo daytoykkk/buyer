@@ -22,6 +22,9 @@ page{
     overflow: hidden;
     transform: translateY(0);
 }
+.swiper_box{
+    height: 184rpx;
+}
 .gk_img_box image{
     width: 100%;
     border-radius: 30rpx;
